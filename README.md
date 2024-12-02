@@ -1,16 +1,26 @@
-# kinoplusmobile
+# Kinoplus Mobile 
 
-KinoPlus App which you can watch movies in Uzbek
 
-## Getting Started
+## Screens 
+![image](https://github.com/user-attachments/assets/ae79c5ad-5dc7-4377-8d93-3fe296109539)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Features
+Flutter 
+Bloc
+Clean architecture
+MVVM MVI GIT
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### 🎥 **Why Choose Us?**
+- **10,000+ movies and TV shows** available for streaming.
+- High-quality streaming for an immersive viewing experience.
+- **Multi-device support**: Available on both **Android** and **iOS** devices.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 📱 **Mobile App Support**
+- **Available for download on Google Play** and the **App Store**.
+- Access your favorite movies and shows directly from your mobile device.
+
+### 📺 **Smart TV Compatibility**
+- For **Smart TV** users, enjoy streaming on the big screen through our dedicated app.
+
+
