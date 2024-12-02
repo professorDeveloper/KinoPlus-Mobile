@@ -2,7 +2,7 @@
 
 
 ## Screens 
-<img src="https://github.com/user-attachments/assets/ae79c5ad-5dc7-4377-8d93-3fe296109539" width="100%" height="1200" />
+![image](https://github.com/user-attachments/assets/ae79c5ad-5dc7-4377-8d93-3fe296109539)
 
 
 ## Features
