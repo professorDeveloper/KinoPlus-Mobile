@@ -8,6 +8,109 @@ class AppStyle {
 
   // Red ZenMaru gothic
   static TextStyle styleRed4Sp32W700Zen = GoogleFonts.zenMaruGothic(
-      fontSize: 32, fontWeight: FontWeight.w700, color: AppColor.Red);
+      fontSize: 32, fontWeight: FontWeight.w700, color: AppColor.Red2);
 
+  static TextStyle styleRed4Sp24W600Zen = GoogleFonts.zenMaruGothic(
+    fontSize: 24,
+    fontWeight: FontWeight.w600,
+    color: AppColor.Red2,
+    height: 1.2,
+    letterSpacing: 0.3,
+  );
+
+  static TextStyle styleRed4Sp20W600Zen = GoogleFonts.zenMaruGothic(
+    fontSize: 20,
+    fontWeight: FontWeight.w600,
+    color: AppColor.Red2,
+    height: 1.2,
+    letterSpacing: 0.3,
+  );
+
+  static TextStyle styleRed4Sp16W900Zen = GoogleFonts.zenMaruGothic(
+    fontSize: 16,
+    fontWeight: FontWeight.w900,
+    color: AppColor.Red2,
+    height: 1.2,
+    letterSpacing: 0.3,
+  );
+  static TextStyle styleGreen4Sp16W900Zen = GoogleFonts.zenMaruGothic(
+    fontSize: 16,
+    fontWeight: FontWeight.w900,
+    color: Colors.green,
+    height: 1.2,
+    letterSpacing: 0.3,
+  );
+
+  static TextStyle styleRed4Sp14W700Zen = GoogleFonts.zenMaruGothic(
+    fontSize: 14,
+    fontWeight: FontWeight.w900,
+    color: AppColor.Red2,
+    height: 1.2,
+    letterSpacing: 0.3,
+  );
+
+  static TextStyle styleRed4Sp13W600Zen = GoogleFonts.zenMaruGothic(
+    fontSize: 13,
+    fontWeight: FontWeight.w600,
+    color: AppColor.Red2,
+    height: 1.2,
+    letterSpacing: 0.3,
+  );
+
+  //Rubic Main color  Style
+  static TextStyle styleMainSp30W600Rub = GoogleFonts.rubik(
+    fontSize: 30,
+    fontWeight: FontWeight.w600,
+    color: AppColor.Black,
+  );
+  static TextStyle styleMainSp29W600Rub = GoogleFonts.rubik(
+    fontSize: 25,
+    fontWeight: FontWeight.w600,
+    color: AppColor.Black,
+  );
+  static TextStyle styleMainSp24W600Rub = GoogleFonts.rubik(
+    fontSize: 24,
+    fontWeight: FontWeight.w600,
+    color: AppColor.Black,
+  );
+
+  static TextStyle styleMainSp20W600Rub = GoogleFonts.rubik(
+    fontSize: 20,
+    fontWeight: FontWeight.w600,
+    color: AppColor.Black,
+  );
+
+  static TextStyle styleMainSp18W600Rub = GoogleFonts.rubik(
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+    color: AppColor.Black,
+  );
+
+  static TextStyle styleMainSp16W600Rub = GoogleFonts.rubik(
+    fontSize: 26,
+    fontWeight: FontWeight.w600,
+    color: AppColor.Black,
+  );
+
+  static TextStyle styleMainSp15W600Rub = GoogleFonts.rubik(
+    fontSize: 15,
+    fontWeight: FontWeight.w600,
+    color: AppColor.Black,
+  );
+
+  static TextStyle styleMainSp14W600Rub = GoogleFonts.rubik(
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
+    color: AppColor.Black,
+  );
+
+  //White Zen
+  static TextStyle styleWhite4Sp18W700Zen = GoogleFonts.zenMaruGothic(
+      fontSize: 18, fontWeight: FontWeight.w700, color: AppColor.White);
+
+  static TextStyle styleWhite4Sp16W900Zen = GoogleFonts.zenMaruGothic(
+      fontSize: 18, fontWeight: FontWeight.w900, color: AppColor.White);
+
+  static TextStyle styleWhite4Sp16W700Zen = GoogleFonts.zenMaruGothic(
+      fontSize: 16, fontWeight: FontWeight.w700, color: AppColor.White);
 }
