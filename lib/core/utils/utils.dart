@@ -1,13 +1,25 @@
 import 'package:flutter/material.dart';
-//
-// int pxToDp(int pixels) {
-//   int logicalPixelRatio = MediaQueryData.fromWindow(WidgetsBinding.instance!.window).devicePixelRatio.toInt();
-//    var a= pixels / logicalPixelRatio;
-//    return int.parse(a);
-// }
+import 'package:google_fonts/google_fonts.dart';
+
 String convertPhoneNumber(String input) {
-  // Remove non-numeric characters from the input string
   String result = input.replaceAll(RegExp(r'[^0-9]'), '');
 
   return "+"+result;
+}
+
+TextTheme createTextTheme(
+    BuildContext context, String bodyFontString, String displayFontString) {
+  TextTheme baseTextTheme = Theme.of(context).textTheme;
+  TextTheme bodyTextTheme = GoogleFonts.getTextTheme(bodyFontString, baseTextTheme);
+  TextTheme displayTextTheme =
+  GoogleFonts.getTextTheme(displayFontString, baseTextTheme);
+  TextTheme textTheme = displayTextTheme.copyWith(
+    bodyLarge: bodyTextTheme.bodyLarge,
+    bodyMedium: bodyTextTheme.bodyMedium,
+    bodySmall: bodyTextTheme.bodySmall,
+    labelLarge: bodyTextTheme.labelLarge,
+    labelMedium: bodyTextTheme.labelMedium,
+    labelSmall: bodyTextTheme.labelSmall,
+  );
+  return textTheme;
 }
