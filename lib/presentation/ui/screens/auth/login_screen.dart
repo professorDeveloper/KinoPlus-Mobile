@@ -138,6 +138,8 @@ class LoginScreen extends StatelessWidget {
                         height: 55,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
+                            elevation: 0,
+
                             backgroundColor: AppColor.Red,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_device_type/flutter_device_type.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
@@ -160,7 +161,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ],
                 ),
               ),
-              SizedBox(height: 30,),
+              Spacer(),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 18.0),
                 child: CustomAnimationsSlide(
@@ -171,6 +172,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     height: 55,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
+                        elevation: 0,
                         backgroundColor: AppColor.Red,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
@@ -198,6 +200,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                 ),
               ),
+              Spacer(),
 
             ],
           ),

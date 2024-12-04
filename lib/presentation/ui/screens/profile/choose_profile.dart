@@ -15,7 +15,7 @@ class ChooseAccountScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xff3d2f2e), // Dark brown background
+        backgroundColor: const Color(0xff3d2f2e),
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
@@ -23,9 +23,14 @@ class ChooseAccountScreen extends StatelessWidget {
           icon: const Icon(
             Icons.arrow_back_ios,
             color: Colors.white,
+
             size: 30,
           ),
         ),
+        shadowColor: const Color(0xff3d2f2e),
+        scrolledUnderElevation: 0,
+        elevation: 0,
+        surfaceTintColor: const Color(0xff3d2f2e),
         centerTitle: true,
       ),
       body: Container(
@@ -40,107 +45,106 @@ class ChooseAccountScreen extends StatelessWidget {
             ],
           ),
         ),
-        child: Container(
-          margin: EdgeInsets.only(left:15,right: 15,top: 70,bottom: 150),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
-            color: Color(0xff402f30)
-          ),
-          child: Column(
-            children: [
-              const SizedBox(height: 40),
-              // Main Icon in the center (like a play button)
-              Center(
-                  child: Image(
-                    image: AssetImage("assets/images/logo.png"),
-                    width: 80,
-                    height: 80,
-                  )),
-              const SizedBox(height: 20),
-              // Title and subtitle text
-               Text(
-                'Akkauntni tanlang!',
-                style: AppStyle.daysOne20White
+        child: ListView(
+          padding: const EdgeInsets.symmetric(horizontal: 15),
+          children: [
+            Center(
+              child: Image(
+                image: AssetImage("assets/images/logo.png"),
+                width: 80,
+                height: 80,
               ),
-              const SizedBox(height: 10),
-               Text(
-                "Iltimos, roʻyxatdan oʻtishni yakunlash uchun\nshaxsiy maʼlumotlaringizni kiriting",
-                textAlign: TextAlign.center,
-                style: AppStyle.rubik14White
+            ),
+            const SizedBox(height: 20),
+            Text(
+              'Akkauntni tanlang!',
+              textAlign: TextAlign.center,
+              style: GoogleFonts.daysOne(
+                fontSize: 20,
+                color: Colors.white,
               ),
-              const SizedBox(height: 40),
-              // Profile Cards
-              Container(
-                child: Expanded(
-                  child: GridView.count(
-                    crossAxisCount: 2,
-                    padding: const EdgeInsets.all(20),
-                    crossAxisSpacing: 20,
-                    mainAxisSpacing: 20,
-                    children: [
-                      ProfileCard(
-                        name: 'Saikou \n Azamov',
-                        imagePath: 'https://avatars.githubusercontent.com/u/108933534?v=4',
-                      ),
-                      ProfileCard(
-                        name: 'Professor \n Developer',
-                        imagePath: 'https://i.pinimg.com/736x/48/57/e6/4857e640770446cf057068bfbaf87e40.jpg',
-                      ),
-                    ],
-                  ),
+            ),
+            const SizedBox(height: 10),
+            Text(
+              "Iltimos, ro`yxatdan o`tishni yakunlash uchun\nshaxsiy maʼlumotlaringizni kiriting",
+              textAlign: TextAlign.center,
+              style: AppStyle.rubik14White,
+            ),
+            const SizedBox(height: 40),
+            GridView.count(
+              shrinkWrap: true,
+              crossAxisCount: 2,
+              padding: const EdgeInsets.all(20),
+              crossAxisSpacing: 20,
+              mainAxisSpacing: 20,
+              children: [
+                ProfileCard(
+                  name: 'Saikou \n Azamov',
+                  imagePath:
+                  'https://avatars.githubusercontent.com/u/108933534?v=4',
                 ),
-              ),
-              CustomAnimationsSlide(
-                direction: FadeSlideDirection.btt,
-                duration: 0.8,
-                child: Container(
-                  margin: const EdgeInsets.only( right:20,left: 20,bottom:25),
-                  width: double.infinity,
-                  child: MaterialButton(
-                    elevation: 0,
-                    highlightElevation: 0,
-                    focusElevation: 0,
-                    onPressed: (){
-                      openScreen(context, RegisterScreen());
-                    },
-                    //slala
-                    textColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      side: BorderSide(color: Color(0xff4f4747),width: 1),
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 7.0),
-                      child: Row(
-                        children: [
-                          FloatingActionButton(
-                            mini: true,
-                            onPressed: () {  },backgroundColor: Color(0xff492d2e),elevation: 0,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30),
-                            ),
-                            child: Icon(CupertinoIcons.add,color: AppColor.Red,size: 30,),
+                ProfileCard(
+                  name: 'Professor \n Developer',
+                  imagePath:
+                  'https://i.pinimg.com/736x/48/57/e6/4857e640770446cf057068bfbaf87e40.jpg',
+                ),
+              ],
+            ),
+            const SizedBox(height: 40),
+            CustomAnimationsSlide(
+              direction: FadeSlideDirection.btt,
+              duration: 0.8,
+              child: Container(
+                margin: const EdgeInsets.only(right: 20, left: 20, bottom: 25),
+                width: double.infinity,
+                child: MaterialButton(
+                  elevation: 0,
+                  highlightElevation: 0,
+                  focusElevation: 0,
+                  onPressed: () {
+                    openScreen(context, RegisterScreen());
+                  },
+                  textColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    side: const BorderSide(color: Color(0xff4f4747), width: 1),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 7.0),
+                    child: Row(
+                      children: [
+                        FloatingActionButton(
+                          mini: true,
+                          onPressed: () {},
+                          backgroundColor: const Color(0xff492d2e),
+                          elevation: 0,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30),
                           ),
-                      Spacer(),
-                      Text("Akkaunt qo’shish",style: GoogleFonts.rubik(
-                              fontSize: 15,
-                              color: AppColor.White
-                          ),),
-                          SizedBox(width: 40,),
-                          Spacer(),
-                        ],
-                      ),
+                          child: const Icon(
+                            CupertinoIcons.add,
+                            color: AppColor.Red,
+                            size: 30,
+                          ),
+                        ),
+                        const Spacer(),
+                        Text(
+                          "Akkaunt qo’shish",
+                          style: GoogleFonts.rubik(
+                            fontSize: 15,
+                            color: AppColor.White,
+                          ),
+                        ),
+                        const SizedBox(width: 40),
+                        const Spacer(),
+                      ],
                     ),
-
                   ),
                 ),
               ),
-
-              // Add Account Button
-            ],
-          ),
-        )
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -174,7 +178,7 @@ class ProfileCard extends StatelessWidget {
           Text(
             name,
             textAlign: TextAlign.center,
-            style:  AppStyle.dayOne14White
+            style: AppStyle.dayOne14White,
           ),
         ],
       ),

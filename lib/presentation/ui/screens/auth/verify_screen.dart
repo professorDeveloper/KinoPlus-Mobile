@@ -17,14 +17,12 @@ class VerifyScreen extends StatefulWidget {
 }
 
 class _VerifyScreenState extends State<VerifyScreen> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Color(0xff2b2022),
-        // Dark reddish color from the t, // Dark reddish color from th,
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
@@ -36,44 +34,39 @@ class _VerifyScreenState extends State<VerifyScreen> {
           ),
         ),
       ),
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            stops: [
-              0.1,
-              0.4,
-              0.6,
-            ],
-            colors: [
-              Color(0xff2b2022), // Dark reddish color from the top
-              Color(0xff1c1e23), // Darker red/brown color at the bottom
-              Color(0xff1c1e23), // Darker red/brown color at the bottom
-            ],
-          ),
-        ),
+      body: SingleChildScrollView(
+        // Added SingleChildScrollView here to handle overflow when keyboard is shown
         child: Container(
-          width: double.infinity,
+          padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom), // Adjusts for keyboard
+          height: MediaQuery.of(context).size.height, // Takes full height of the screen
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              stops: [0.1, 0.4, 0.6],
+              colors: [
+                Color(0xff2b2022),
+                Color(0xff1c1e23),
+                Color(0xff1c1e23),
+              ],
+            ),
+          ),
           child: Column(
             children: [
               Center(
-                  child: Image(
-                image: AssetImage("assets/images/logo.png"),
-                width: 80,
-                height: 80,
-              )),
-              SizedBox(
-                height: 18,
+                child: Image(
+                  image: AssetImage("assets/images/logo.png"),
+                  width: 80,
+                  height: 80,
+                ),
               ),
+              SizedBox(height: 18),
               Text(
                 textAlign: TextAlign.center,
                 "Telefon raqamingizni \n tasdiqlang!",
-                style: AppStyle.daysOne20White
+                style: AppStyle.daysOne20White,
               ),
-              SizedBox(
-                height: 18,
-              ),
+              SizedBox(height: 18),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12.0),
                 child: Text.rich(
@@ -82,57 +75,50 @@ class _VerifyScreenState extends State<VerifyScreen> {
                     children: [
                       TextSpan(
                         text: '+998 97 628 28 82',
-                        style: AppStyle.rubik16White
+                        style: AppStyle.rubik16White,
                       ),
                       TextSpan(
-                        text:
-                            ' telefon raqamiga 6 xonali kod yuborildi, ushbu kodni kiriting!',
-                        style: AppStyle.rubik16Gray2
+                        text: ' telefon raqamiga 6 xonali kod yuborildi, ushbu kodni kiriting!',
+                        style: AppStyle.rubik16Gray2,
                       ),
                     ],
                   ),
                 ),
               ),
-              SizedBox(height: 36,),
-              Text("Kodni kiriting",style: AppStyle.rubik13Gray2,),
-              SizedBox(height: 15,),
-              Center(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                  child: PinCodeTextField(
-                    appContext: context,
-                    length: 5,
-
-                    keyboardType: TextInputType.number,
-                    textStyle: AppStyle.dayOne15White,
-                    cursorColor: Colors.white,
-                    animationType: AnimationType.fade,
-                    pinTheme:PinTheme(
-                      borderWidth: 0.1,
-                      borderRadius: BorderRadius.circular(20),
-                      shape: PinCodeFieldShape.box,
-                      fieldHeight: 55,
-                      fieldWidth: 55,
-                      activeFillColor: Colors.black,
-                      inactiveFillColor: AppColor.Gray3,
-                      selectedFillColor: Colors.black,
-                      activeColor: Colors.white,
-                      inactiveColor: Colors.white,
-                      selectedColor: Colors.white,
-                    ),
-                    enableActiveFill: true,
-                    onChanged: (value) {
-                      debugPrint("Value entered: $value");
-                    },
+              SizedBox(height: 36),
+              Text("Kodni kiriting", style: AppStyle.rubik13Gray2),
+              SizedBox(height: 15),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: PinCodeTextField(
+                  appContext: context,
+                  length: 5,
+                  keyboardType: TextInputType.number,
+                  textStyle: AppStyle.dayOne15White,
+                  cursorColor: Colors.white,
+                  animationType: AnimationType.fade,
+                  pinTheme: PinTheme(
+                    borderWidth: 0.1,
+                    borderRadius: BorderRadius.circular(20),
+                    shape: PinCodeFieldShape.box,
+                    fieldHeight: 55,
+                    fieldWidth: 55,
+                    activeFillColor: Colors.black,
+                    inactiveFillColor: AppColor.Gray3,
+                    selectedFillColor: Colors.black,
+                    activeColor: Colors.white,
+                    inactiveColor: Colors.white,
+                    selectedColor: Colors.white,
                   ),
+                  enableActiveFill: true,
+                  onChanged: (value) {
+                    debugPrint("Value entered: $value");
+                  },
                 ),
               ),
               SizedBox(height: 20),
-              Text(
-                "01:00", // Timer text
-                style: AppStyle.rubik14White,
-              ),
-              SizedBox(height: 35,),
+              Text("01:00", style: AppStyle.rubik14White),
+              SizedBox(height: 35),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 18.0),
                 child: CustomAnimationsSlide(
@@ -143,6 +129,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
                     height: 55,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
+                        elevation: 0,
                         backgroundColor: AppColor.Red,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
@@ -151,13 +138,13 @@ class _VerifyScreenState extends State<VerifyScreen> {
                       onPressed: () {
                         openScreen(context, ChooseAccountScreen());
                       },
-                      child:  Row(
+                      child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Spacer(),
                           Text(
                             "Kirish",
-                            style:AppStyle.rubik16White
+                            style: AppStyle.rubik16White,
                           ),
                           Spacer(),
                           Icon(
@@ -170,7 +157,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
                   ),
                 ),
               ),
-              Spacer()
+              SizedBox(height: 20),
             ],
           ),
         ),
