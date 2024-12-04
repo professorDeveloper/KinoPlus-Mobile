@@ -106,6 +106,7 @@ class ChooseAccountScreen extends StatelessWidget {
                     onPressed: (){
                       openScreen(context, RegisterScreen());
                     },
+                    //slala
                     textColor: Colors.white,
                     shape: RoundedRectangleBorder(
                       side: BorderSide(color: Color(0xff4f4747),width: 1),
