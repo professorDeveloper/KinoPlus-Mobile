@@ -15,7 +15,7 @@ class ChooseAccountScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xff2c2120), // Dark brown background
+        backgroundColor: const Color(0xff3d2f2e), // Dark brown background
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
@@ -34,9 +34,9 @@ class ChooseAccountScreen extends StatelessWidget {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Color(0xff2c2120),
+              Color(0xff3d2f2e),
               Color(0xff2e1f20),
-              Color(0xff23181b),
+              Color(0xff1f171a),
             ],
           ),
         ),
@@ -60,10 +60,7 @@ class ChooseAccountScreen extends StatelessWidget {
               // Title and subtitle text
                Text(
                 'Akkauntni tanlang!',
-                style: GoogleFonts.daysOne(
-                  fontSize: 20,
-                  color: Colors.white,
-                ),
+                style: AppStyle.daysOne20White
               ),
               const SizedBox(height: 10),
                Text(
