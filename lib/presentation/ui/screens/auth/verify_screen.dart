@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:kinoplusmobile/core/constants/app_style.dart';
 import 'package:kinoplusmobile/navigator/navigator.dart';
 import 'package:kinoplusmobile/presentation/ui/screens/profile/choose_profile.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
@@ -68,10 +69,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
               Text(
                 textAlign: TextAlign.center,
                 "Telefon raqamingizni \n tasdiqlang!",
-                style: GoogleFonts.daysOne(
-                  fontSize: 20,
-                  color: Colors.white,
-                ),
+                style: AppStyle.daysOne20White
               ),
               SizedBox(
                 height: 18,
@@ -84,28 +82,19 @@ class _VerifyScreenState extends State<VerifyScreen> {
                     children: [
                       TextSpan(
                         text: '+998 97 628 28 82',
-                        style: GoogleFonts.rubik(
-                          color: Colors.white,
-                          fontSize: 16,
-                        ),
+                        style: AppStyle.rubik16White
                       ),
                       TextSpan(
                         text:
                             ' telefon raqamiga 6 xonali kod yuborildi, ushbu kodni kiriting!',
-                        style: GoogleFonts.rubik(
-                          color: AppColor.Gray2,
-                          fontSize: 16,
-                        ),
+                        style: AppStyle.rubik16Gray2
                       ),
                     ],
                   ),
                 ),
               ),
               SizedBox(height: 36,),
-              Text("Kodni kiriting",style: GoogleFonts.rubik(
-                fontSize: 13,
-                color: AppColor.Gray2
-              ),),
+              Text("Kodni kiriting",style: AppStyle.rubik13Gray2,),
               SizedBox(height: 15,),
               Center(
                 child: Padding(
@@ -115,7 +104,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
                     length: 5,
 
                     keyboardType: TextInputType.number,
-                    textStyle: GoogleFonts.daysOne(fontSize: 15, color: Colors.white),
+                    textStyle: AppStyle.dayOne15White,
                     cursorColor: Colors.white,
                     animationType: AnimationType.fade,
                     pinTheme:PinTheme(
@@ -141,7 +130,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
               SizedBox(height: 20),
               Text(
                 "01:00", // Timer text
-                style: TextStyle(color: Colors.white, fontSize: 16),
+                style: AppStyle.rubik14White,
               ),
               SizedBox(height: 35,),
               Padding(
@@ -160,7 +149,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
                         ),
                       ),
                       onPressed: () {
-                        openScreen(context, VerifyScreen());
+                        openScreen(context, ChooseAccountScreen());
                       },
                       child:  Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -168,10 +157,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
                           Spacer(),
                           Text(
                             "Kirish",
-                            style:GoogleFonts.rubik (
-                              color: AppColor.White,
-                              fontSize: 16,
-                            ),
+                            style:AppStyle.rubik16White
                           ),
                           Spacer(),
                           Icon(

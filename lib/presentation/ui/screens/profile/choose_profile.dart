@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:kinoplusmobile/core/constants/app_style.dart';
 
 import '../../../../core/constants/app_color.dart';
 import '../../../../navigator/navigator.dart';
 import '../../../helpers/custom_animation.dart';
+import '../auth/register_screen.dart';
 
 class ChooseAccountScreen extends StatelessWidget {
   const ChooseAccountScreen({Key? key}) : super(key: key);
@@ -67,10 +69,7 @@ class ChooseAccountScreen extends StatelessWidget {
                Text(
                 "Iltimos, roʻyxatdan oʻtishni yakunlash uchun\nshaxsiy maʼlumotlaringizni kiriting",
                 textAlign: TextAlign.center,
-                style: GoogleFonts.rubik(
-                  fontSize: 14,
-                  color: Colors.white,
-                ),
+                style: AppStyle.rubik14White
               ),
               const SizedBox(height: 40),
               // Profile Cards
@@ -105,7 +104,7 @@ class ChooseAccountScreen extends StatelessWidget {
                     highlightElevation: 0,
                     focusElevation: 0,
                     onPressed: (){
-                      openScreen(context, ChooseAccountScreen());
+                      openScreen(context, RegisterScreen());
                     },
                     textColor: Colors.white,
                     shape: RoundedRectangleBorder(
@@ -177,10 +176,7 @@ class ProfileCard extends StatelessWidget {
           Text(
             name,
             textAlign: TextAlign.center,
-            style:  GoogleFonts.daysOne(
-              color: Colors.white,
-              fontSize: 14,
-            ),
+            style:  AppStyle.dayOne14White
           ),
         ],
       ),

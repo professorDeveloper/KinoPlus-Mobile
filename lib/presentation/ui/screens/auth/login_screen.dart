@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_device_type/flutter_device_type.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kinoplusmobile/core/constants/app_color.dart';
+import 'package:kinoplusmobile/core/constants/app_style.dart';
 import 'package:kinoplusmobile/navigator/navigator.dart';
 import 'package:kinoplusmobile/presentation/helpers/custom_animation.dart';
 import 'package:kinoplusmobile/presentation/ui/screens/auth/verify_screen.dart';
@@ -47,42 +48,22 @@ class LoginScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(height: 270),
-                    Text(
-                      'Tizimga kirish',
-                      style: GoogleFonts.daysOne(
-                        fontSize: 20,
-                        color: Colors.white,
-                      ),
-                    ),
+                    Text('Tizimga kirish', style: AppStyle.daysOne20White),
                     const SizedBox(height: 8),
                     Text(
                       'Tizimga kirish va ro‘yxatdan o‘tish uchun siz quyidagi usullardan foydalanishingiz mumkin.',
-                      style: GoogleFonts.rubik(
-                        textStyle: GoogleFonts.rubik(
-                          color: AppColor.Gray2,
-                          fontSize: 14,
-                        ),
-                      ),
+                      style: AppStyle.rubik14Gray2,
                     ),
                     const SizedBox(height: 20),
 
                     // Phone number input
                     Text(
                       'Telefon raqamingiz',
-                      style: GoogleFonts.rubik(
-                        textStyle: GoogleFonts.rubik(
-                          color: AppColor.White,
-                          fontSize: 14,
-                        ),
-                      ),
+                      style: AppStyle.rubik14White,
                     ),
                     const SizedBox(height: 8),
                     TextField(
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: AppStyle.rubik15White,
                       keyboardType: TextInputType.phone,
                       decoration: InputDecoration(
                         hintStyle: TextStyle(color: AppColor.Gray2),
@@ -138,15 +119,11 @@ class LoginScreen extends StatelessWidget {
                               size: 20,
                             ),
                           ),
-                          const Expanded(
-                            child: Text(
-                              'Telefon raqamingiz noto‘g‘ri kiritildi.',
-                              style: TextStyle(
-                                color: AppColor.Gray2,
-                                fontSize: 12,
-                              ),
-                            ),
-                          ),
+                          Expanded(
+                              child: Text(
+                            'Telefon raqamingiz noto‘g‘ri kiritildi.',
+                            style: AppStyle.rubik12Gray2,
+                          )),
                         ],
                       ),
                     ),
@@ -175,11 +152,7 @@ class LoginScreen extends StatelessWidget {
                               Spacer(),
                               Text(
                                 "Kirish",
-                                style: GoogleFonts.rubik(
-                                  color: AppColor.White,
-                                  fontSize: 16,
-                                ),
-                              ),
+                                style: AppStyle.rubik16White),
                               Spacer(),
                               Icon(
                                 Icons.arrow_forward_rounded,
@@ -191,10 +164,10 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 20),
-                    CustomAnimationsSlide(
+                    const CustomAnimationsSlide(
                       direction: FadeSlideDirection.btt,
                       duration: 0.8,
-                      child: const Row(children: <Widget>[
+                      child: Row(children: <Widget>[
                         Expanded(
                           child: Divider(
                             color: AppColor.Gray2,
@@ -226,19 +199,16 @@ class LoginScreen extends StatelessWidget {
                         children: [
                           // First social button
                           Expanded(
-                            child:facebookLoginBtn(),
+                            child: facebookLoginBtn(),
                           ),
                           SizedBox(
                             width: 10,
                           ),
                           // Second social button
                           Expanded(
-                              child: Device
-                                  .get()
-                                  .isAndroid
+                              child: Device.get().isAndroid
                                   ? googleLoginBtn()
-                                  : appleLoginBtn()
-                          ),
+                                  : appleLoginBtn()),
                         ],
                       ),
                     ),
@@ -256,8 +226,8 @@ class LoginScreen extends StatelessWidget {
                           backgroundColor: AppColor.Gray6,
                         ),
                         onPressed: () {},
-                        child:  SizedBox(
-                          height:Device.get().isAndroid?45:50,
+                        child: SizedBox(
+                          height: Device.get().isAndroid ? 45 : 50,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -266,11 +236,7 @@ class LoginScreen extends StatelessWidget {
                               SizedBox(width: 12),
                               Text(
                                 'QR Code orqali kirish',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                                style: AppStyle.rubik14White
                               ),
                             ],
                           ),
@@ -300,13 +266,14 @@ class LoginScreen extends StatelessWidget {
           ),
         ),
         onPressed: () {},
-        icon: Image.asset(AppImages.facebookicon, width: 20, height: 20,),
+        icon: Image.asset(
+          AppImages.facebookicon,
+          width: 20,
+          height: 20,
+        ),
         label: Text(
           "Facebook",
-          style: GoogleFonts.rubik(
-            color: Colors.white,
-            fontSize: 12,
-          ),
+          style:AppStyle.rubik12White
         ),
       ),
     );
@@ -327,10 +294,7 @@ class LoginScreen extends StatelessWidget {
         icon: Icon(Icons.apple, color: AppColor.White, size: 20),
         label: Text(
           "Apple",
-          style: GoogleFonts.rubik(
-            color: Colors.white,
-            fontSize: 12,
-          ),
+          style: AppStyle.rubik12White
         ),
       ),
     );
@@ -348,15 +312,16 @@ class LoginScreen extends StatelessWidget {
           ),
         ),
         onPressed: () {},
-        icon: Image.asset(AppImages.googleicon, width: 20, height: 20,),
+        icon: Image.asset(
+          AppImages.googleicon,
+          width: 20,
+          height: 20,
+        ),
         label: Text(
-        "Google",
-        style: GoogleFonts.rubik(
-      color: Colors.white,
-        fontSize: 12,
+          "Google",
+          style: AppStyle.rubik12White
+        ),
       ),
-    ),)
-    ,
     );
   }
 }
