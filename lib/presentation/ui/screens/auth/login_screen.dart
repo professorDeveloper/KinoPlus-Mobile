@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_device_type/flutter_device_type.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kinoplusmobile/core/constants/app_color.dart';
+import 'package:kinoplusmobile/navigator/navigator.dart';
+import 'package:kinoplusmobile/presentation/helpers/custom_animation.dart';
+import 'package:kinoplusmobile/presentation/ui/screens/auth/verify_screen.dart';
+
+import '../../../../core/constants/app_images.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -9,328 +15,348 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.Black,
-      body: Stack(
-        children: [
-          // Background image
-          Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/login_b.png'),
-                fit: BoxFit.cover,
+      body: SingleChildScrollView(
+        child: Stack(
+          children: [
+            // Background image
+            Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(AppImages.loginbanner),
+                  fit: BoxFit.cover,
+                ),
               ),
-            ),
-            width: double.infinity,
-            height: 351,
-            child: Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    Colors.black.withOpacity(0.5),
-                    Colors.transparent,
-                  ],
-                  begin: Alignment.bottomCenter,
-                  end: Alignment.topCenter,
+              height: 350,
+              child: Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      AppColor.Black.withOpacity(1),
+                      Colors.transparent,
+                    ],
+                    begin: Alignment.bottomCenter,
+                    end: Alignment.topCenter,
+                  ),
                 ),
               ),
             ),
-          ),
-          SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Spacer(flex: 7), // For spacing
-                  // Title
-                  const Text(
-                    'Tizimga kirish',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    'Tizimga kirish va ro‘yxatdan o‘tish uchun siz quyidagi usullardan foydalanishingiz mumkin.',
-                    style: GoogleFonts.rubik(
-                      textStyle: const TextStyle(
-                        color: AppColor.Gray2,
+            SafeArea(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 18.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(height: 270),
+                    Text(
+                      'Tizimga kirish',
+                      style: GoogleFonts.daysOne(
+                        fontSize: 20,
+                        color: Colors.white,
                       ),
                     ),
-                  ),
-                  const SizedBox(height: 20),
-
-                  // Phone number input
-
-                  Text(
-                    'Telefon raqamingiz',
-                    style: GoogleFonts.rubik(
-                      textStyle: const TextStyle(
-                        color: AppColor.White,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  TextField(
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    keyboardType: TextInputType.phone,
-                    decoration: InputDecoration(
-                      hintStyle: const TextStyle(color: Colors.white),
-                      prefixIcon: const Padding(
-                        padding: EdgeInsets.all(15.0),
-                        child: Text(
-                          '+998',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                      isDense: true,
-                      prefixIconConstraints: const BoxConstraints(
-                        minWidth: 0,
-                        minHeight: 0,
-                      ),
-                      filled: true,
-                      fillColor: AppColor.Gray6,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: const BorderSide(
+                    const SizedBox(height: 8),
+                    Text(
+                      'Tizimga kirish va ro‘yxatdan o‘tish uchun siz quyidagi usullardan foydalanishingiz mumkin.',
+                      style: GoogleFonts.rubik(
+                        textStyle: GoogleFonts.rubik(
                           color: AppColor.Gray2,
+                          fontSize: 14,
                         ),
                       ),
                     ),
-                  ),
-                  const SizedBox(height: 10),
+                    const SizedBox(height: 20),
 
-                  // Error message
-                  Row(
-                    children: [
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.check_box_rounded,
-                          color: Colors.red,
+                    // Phone number input
+                    Text(
+                      'Telefon raqamingiz',
+                      style: GoogleFonts.rubik(
+                        textStyle: GoogleFonts.rubik(
+                          color: AppColor.White,
+                          fontSize: 14,
                         ),
                       ),
-                      const Expanded(
-                        child: Text(
-                          'Contrary to popular belief, Lorem Ipsum is not',
-                          style: TextStyle(
-                            color: AppColor.White,
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                    ),
+                    const SizedBox(height: 8),
+                    TextField(
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
                       ),
-                    ],
-                  ),
-                  const SizedBox(height: 15),
-
-                  // Login button
-                  SizedBox(
-                    width: double.infinity,
-                    height: 50,
-                    child: ElevatedButton(
-                      iconAlignment: IconAlignment.end,
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: AppColor.Red,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                      ),
-                      onPressed: () {},
-                      child: const Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Expanded(
-                            flex: 45,
-                            child: Center(
-                              child: Text(
-                                "Kirish",
-                                style: TextStyle(
-                                  color: AppColor.White,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
+                      keyboardType: TextInputType.phone,
+                      decoration: InputDecoration(
+                        hintStyle: TextStyle(color: AppColor.Gray2),
+                        prefixIcon: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Text(
+                            '+998',
+                            style: GoogleFonts.rubik(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
-                          Expanded(
-                            flex: 2,
-                            child: Icon(
-                              Icons.arrow_forward_rounded,
-                              color: AppColor.White,
+                        ),
+                        prefixIconConstraints: const BoxConstraints(
+                          minWidth: 0,
+                          minHeight: 0,
+                        ),
+                        filled: true,
+                        fillColor: AppColor.Gray6,
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: const BorderSide(
+                            color: AppColor.Gray2,
+                          ),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: const BorderSide(
+                            color: AppColor.Gray2,
+                          ),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: const BorderSide(
+                            color: AppColor.Red,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+
+                    // Error message
+                    Visibility(
+                      visible: false,
+                      child: Row(
+                        children: [
+                          IconButton(
+                            onPressed: () {},
+                            icon: const Icon(
+                              Icons.error_outline,
+                              color: Colors.red,
+                              size: 20,
+                            ),
+                          ),
+                          const Expanded(
+                            child: Text(
+                              'Telefon raqamingiz noto‘g‘ri kiritildi.',
+                              style: TextStyle(
+                                color: AppColor.Gray2,
+                                fontSize: 12,
+                              ),
                             ),
                           ),
                         ],
                       ),
                     ),
-                  ),
-                  const SizedBox(height: 20),
-                  const Row(children: <Widget>[
-                    Expanded(
-                      child: Divider(
-                        color: AppColor.Gray2,
-                      ),
-                    ),
-                    SizedBox(width: 10),
-                    Text(
-                      "Yoki",
-                      style: TextStyle(color: AppColor.Gray2),
-                    ),
-                    SizedBox(width: 10),
-                    Expanded(
-                      child: Divider(
-                        color: AppColor.Gray2,
-                      ),
-                    ),
-                  ]),
+                    const SizedBox(height: 15),
 
-                  const SizedBox(height: 20),
-
-                  // Social media buttons
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      SizedBox(
-                        width: 109,
-                        height: 40,
-                        child: ElevatedButton.icon(
+                    // Login button
+                    CustomAnimationsSlide(
+                      direction: FadeSlideDirection.btt,
+                      duration: 0.8,
+                      child: SizedBox(
+                        width: double.infinity,
+                        height: 55,
+                        child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: AppColor.Gray6,
-                            padding: const EdgeInsets.symmetric(horizontal: 8),
+                            backgroundColor: AppColor.Red,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),
                             ),
                           ),
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.facebook,
-                            color: Colors.blue,
-                            size: 20,
-                          ),
-                          label: const Text(
-                            'Facebook',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 12,
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 109,
-                        height: 40,
-                        child: ElevatedButton.icon(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: AppColor.Gray6,
-                            padding: const EdgeInsets.symmetric(horizontal: 8),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                          ),
-                          onPressed: () {},
-                          icon: const Icon(Icons.g_translate_outlined,
-                              color: Colors.red, size: 20),
-                          label: const Text(
-                            'Google',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 12,
-                            ),
+                          onPressed: () {
+                            openScreen(context, VerifyScreen());
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Spacer(),
+                              Text(
+                                "Kirish",
+                                style: GoogleFonts.rubik(
+                                  color: AppColor.White,
+                                  fontSize: 16,
+                                ),
+                              ),
+                              Spacer(),
+                              Icon(
+                                Icons.arrow_forward_rounded,
+                                color: AppColor.White,
+                              ),
+                            ],
                           ),
                         ),
                       ),
-                      SizedBox(
-                        width: 109,
-                        height: 40,
-                        child: ElevatedButton.icon(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: AppColor.Gray6,
-                            padding: const EdgeInsets.symmetric(horizontal: 8),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12),
-                            ),
+                    ),
+                    const SizedBox(height: 20),
+                    CustomAnimationsSlide(
+                      direction: FadeSlideDirection.btt,
+                      duration: 0.8,
+                      child: const Row(children: <Widget>[
+                        Expanded(
+                          child: Divider(
+                            color: AppColor.Gray2,
+                            thickness: 1,
                           ),
-                          onPressed: () {},
-                          icon: const Icon(Icons.apple,
-                              color: AppColor.White, size: 20),
-                          label: const Text('Apple',
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 12)),
                         ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 10),
+                        SizedBox(width: 10),
+                        Text(
+                          "Yoki",
+                          style: TextStyle(color: AppColor.Gray2),
+                        ),
+                        SizedBox(width: 10),
+                        Expanded(
+                          child: Divider(
+                            color: AppColor.Gray2,
+                            thickness: 1,
+                          ),
+                        ),
+                      ]),
+                    ),
+                    const SizedBox(height: 20),
 
-                  // QR Code button
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
+                    // Social media buttons
+                    CustomAnimationsSlide(
+                      direction: FadeSlideDirection.btt,
+                      duration: 0.8,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          // First social button
+                          Expanded(
+                            child:facebookLoginBtn(),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          // Second social button
+                          Expanded(
+                              child: Device
+                                  .get()
+                                  .isAndroid
+                                  ? googleLoginBtn()
+                                  : appleLoginBtn()
+                          ),
+                        ],
                       ),
-                      backgroundColor: AppColor.Gray6,
                     ),
-                    onPressed: () {},
-                    child: const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(Icons.qr_code_scanner_rounded,
-                            color: Colors.white),
-                        SizedBox(width: 12),
-                        Text('QR Code orqali kirish',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
-                            )),
-                      ],
+                    const SizedBox(height: 12),
+
+                    // QR Code button
+                    CustomAnimationsSlide(
+                      direction: FadeSlideDirection.btt,
+                      duration: 0.8,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          backgroundColor: AppColor.Gray6,
+                        ),
+                        onPressed: () {},
+                        child:  SizedBox(
+                          height:Device.get().isAndroid?45:50,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.qr_code_scanner_rounded,
+                                  color: Colors.white),
+                              SizedBox(width: 12),
+                              Text(
+                                'QR Code orqali kirish',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     ),
-                  ),
-                  const SizedBox(height: 12),
-                ],
+                    const SizedBox(height: 20),
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
+    );
+  }
 
-      // Bottom Navigation Bar
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: AppColor.Black,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Asosiy',
+  Widget facebookLoginBtn() {
+    return SizedBox(
+      height: 40,
+      child: ElevatedButton.icon(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: AppColor.Gray6,
+          padding: const EdgeInsets.symmetric(horizontal: 8),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
           ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.category), label: 'Kategoriya'),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.video_library),
-            label: 'Shorts',
+        ),
+        onPressed: () {},
+        icon: Image.asset(AppImages.facebookicon, width: 20, height: 20,),
+        label: Text(
+          "Facebook",
+          style: GoogleFonts.rubik(
+            color: Colors.white,
+            fontSize: 12,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.tv),
-            label: 'TV',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.chat),
-            label: 'Chat',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profil',
-          ),
-        ],
+        ),
       ),
+    );
+  }
+
+  Widget appleLoginBtn() {
+    return SizedBox(
+      height: 40,
+      child: ElevatedButton.icon(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: AppColor.Gray6,
+          padding: const EdgeInsets.symmetric(horizontal: 8),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
+        onPressed: () {},
+        icon: Icon(Icons.apple, color: AppColor.White, size: 20),
+        label: Text(
+          "Apple",
+          style: GoogleFonts.rubik(
+            color: Colors.white,
+            fontSize: 12,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget googleLoginBtn() {
+    return SizedBox(
+      height: 40,
+      child: ElevatedButton.icon(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: AppColor.Gray6,
+          padding: const EdgeInsets.symmetric(horizontal: 8),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
+        onPressed: () {},
+        icon: Image.asset(AppImages.googleicon, width: 20, height: 20,),
+        label: Text(
+        "Google",
+        style: GoogleFonts.rubik(
+      color: Colors.white,
+        fontSize: 12,
+      ),
+    ),)
+    ,
     );
   }
 }

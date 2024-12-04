@@ -25,7 +25,9 @@ class _VerifyScreenState extends State<VerifyScreen> {
         backgroundColor: Color(0xff2b2022),
         // Dark reddish color from the t, // Dark reddish color from th,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: Icon(
             CupertinoIcons.back,
             size: 30,
@@ -142,29 +144,43 @@ class _VerifyScreenState extends State<VerifyScreen> {
                 style: TextStyle(color: Colors.white, fontSize: 16),
               ),
               SizedBox(height: 35,),
-              CustomAnimationsSlide(
-                direction: FadeSlideDirection.btt,
-                duration: 0.8,
-                child: Container(
-                  height: 60,
-                  margin: const EdgeInsets.all(15),
-                  width: double.infinity,
-                  child: MaterialButton(
-                    elevation: 0,
-                    highlightElevation: 0,
-                    focusElevation: 0,
-                    onPressed: (){
-                      openScreen(context, ChooseAccountScreen());
-                    },
-                    color: AppColor.Red,
-                    textColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 18.0),
+                child: CustomAnimationsSlide(
+                  direction: FadeSlideDirection.btt,
+                  duration: 0.8,
+                  child: SizedBox(
+                    width: double.infinity,
+                    height: 55,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColor.Red,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                      ),
+                      onPressed: () {
+                        openScreen(context, VerifyScreen());
+                      },
+                      child:  Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Spacer(),
+                          Text(
+                            "Kirish",
+                            style:GoogleFonts.rubik (
+                              color: AppColor.White,
+                              fontSize: 16,
+                            ),
+                          ),
+                          Spacer(),
+                          Icon(
+                            Icons.arrow_forward_rounded,
+                            color: AppColor.White,
+                          ),
+                        ],
+                      ),
                     ),
-                    child: Text("Kirish",style: GoogleFonts.rubik(
-                      fontSize: 16,
-                      color: AppColor.White
-                    ),),
                   ),
                 ),
               ),
