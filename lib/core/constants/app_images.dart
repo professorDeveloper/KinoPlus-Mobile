@@ -6,5 +6,9 @@ class AppImages {
   static const String loginbanner = 'assets/images/loginbanner.png';
   static const String logo = 'assets/images/logo.png';
 
-}
+  static const String iconPlus = 'assets/icons/18plus.png';
 
+  static const String homeBanner = 'assets/images/homebanner.png';
+
+  static const String joker = 'assets/images/joker.png';
+}
