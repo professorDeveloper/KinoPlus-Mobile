@@ -96,59 +96,84 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         SafeArea(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12.0),
+            padding: const EdgeInsets.symmetric(horizontal: 0.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: 250),
-                Text(bannerList[_current], style: AppStyle.daysOne25White),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                  child: Text(bannerList[_current], style: AppStyle.daysOne25White),
+                ),
                 const SizedBox(height: 8),
-                Text(
-                  bannerDesc[_current],
-                  style: AppStyle.rubik14Gray2,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                  child: Text(
+                    bannerDesc[_current],
+                    style: AppStyle.rubik14Gray2,
+                  ),
                 ),
                 const SizedBox(height: 20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: List.generate(bannerList.length, (index) {
-                    return Container(
-                      width: 8.0,
-                      height: 8.0,
-                      margin: const EdgeInsets.symmetric(
-                          vertical: 10.0, horizontal: 5.0),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color:
-                            _current == index ? AppColor.Red2 : AppColor.Gray2,
-                      ),
-                    );
-                  }),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: List.generate(bannerList.length, (index) {
+                      return Container(
+                        width: 8.0,
+                        height: 8.0,
+                        margin: const EdgeInsets.symmetric(
+                            vertical: 10.0, horizontal: 5.0),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color:
+                              _current == index ? AppColor.Red2 : AppColor.Gray2,
+                        ),
+                      );
+                    }),
+                  ),
                 ),
                 SizedBox(
                   height: 20,
                 ),
-                MaterialButton(
-                  padding: EdgeInsets.all(0),
-                  onPressed: () {},
-                  child: Row(
-                    children: [
-                      Text(
-                        "Eng ko’p ko’rilgan filmlar",
-                        style: AppStyle.daysOne18White,
-                      ),
-                      Spacer(),
-                      Icon(
-                        CupertinoIcons.right_chevron,
-                        color: Colors.white,
-                        size: 21,
-                      ),
-                      SizedBox(
-                        width: 5,
-                      )
-                    ],
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                  child: MaterialButton(
+
+                    padding: EdgeInsets.all(0),
+                    onPressed: () {},
+                    child: Row(
+                      children: [
+                        Text(
+                          "Eng ko’p ko’rilgan filmlar",
+                          style: AppStyle.daysOne18White,
+                        ),
+                        Spacer(),
+                        Icon(
+                          CupertinoIcons.right_chevron,
+                          color: Colors.white,
+                          size: 21,
+                        ),
+                        SizedBox(
+                          width: 5,
+                        )
+                      ],
+                    ),
                   ),
                 ),
-                movieItem(AppImages.imagesItem1),
+                Padding(
+                  padding: const EdgeInsets.only(left: 2.0,right: 5),
+                  child: Container(
+                    height: 400,
+                    width: double.infinity,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 13,
+                      itemBuilder: (context,index){
+                      return movieItem(AppImages.imagesItem1);
+                    },),
+                  ),
+                )
               ],
             ),
           ),
@@ -159,12 +184,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget movieItem(String imagePath) {
     return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 2.0,vertical: 0),
       child: Column(
         children: [
           SizedBox(
             width: 110,
             height: 165,
-            child: Stack(children: [
+            child: Stack(
+                children: [
               Card(
                 elevation: 1,
                 shadowColor: AppColor.Black.withOpacity(1),
@@ -204,6 +231,11 @@ class _HomeScreenState extends State<HomeScreen> {
               ))
             ]),
           ),
+          SizedBox(height: 4,),
+          Padding(
+            padding: const EdgeInsets.only(left: 2.0),
+            child: Text("Hokkeynie papi",style: AppStyle.rubik14White,),
+          )
         ],
       ),
     );
