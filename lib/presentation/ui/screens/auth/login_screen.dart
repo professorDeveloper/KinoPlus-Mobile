@@ -8,6 +8,7 @@ import 'package:kinoplusmobile/presentation/helpers/custom_animation.dart';
 import 'package:kinoplusmobile/presentation/ui/screens/auth/verify_screen.dart';
 
 import '../../../../core/constants/app_images.dart';
+import 'login_qr.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -227,9 +228,11 @@ class LoginScreen extends StatelessWidget {
                           ),
                           backgroundColor: AppColor.Gray6,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          openScreen(context, ScannerPage());
+                        }  ,
                         child: SizedBox(
-                          height: Device.get().isAndroid ? 45 : 50,
+                          height: Device.get().isAndroid ? 50 : 55,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -258,7 +261,7 @@ class LoginScreen extends StatelessWidget {
 
   Widget facebookLoginBtn() {
     return SizedBox(
-      height: 40,
+      height: 50,
       child: ElevatedButton.icon(
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColor.Gray6,
@@ -283,7 +286,7 @@ class LoginScreen extends StatelessWidget {
 
   Widget appleLoginBtn() {
     return SizedBox(
-      height: 40,
+      height: 50,
       child: ElevatedButton.icon(
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColor.Gray6,
@@ -304,7 +307,7 @@ class LoginScreen extends StatelessWidget {
 
   Widget googleLoginBtn() {
     return SizedBox(
-      height: 40,
+      height: 50,
       child: ElevatedButton.icon(
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColor.Gray6,

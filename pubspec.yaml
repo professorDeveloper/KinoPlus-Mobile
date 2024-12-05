@@ -34,7 +34,10 @@ dependencies:
 
   flutter_svg: ^1.0.3
   flutter_bloc: ^8.0.1
+  qr_flutter: ^4.1.0
+  mobile_scanner: ^6.0.2
   google_fonts: ^4.0.4
+  easy_localization: ^3.0.7
 
   package_info_plus: ^4.0.1
 

@@ -2,9 +2,18 @@
 class Assets {
   Assets._();
 
+  static const String icons18plus = 'assets/icons/18plus.png';
+  static const String iconsAppleicon = 'assets/icons/appleicon.png';
   static const String iconsFacebookicon = 'assets/icons/facebookicon.png';
-  static const String iconsAppleIcon = 'assets/icons/appleicon.png';
   static const String iconsGoogleicon = 'assets/icons/googleicon.png';
+  static const String iconsImdbicon = 'assets/icons/imdbicon.png';
+  static const String iconsSearchicon = 'assets/icons/searchicon.png';
+  static const String imagesHomebanner = 'assets/images/homebanner.png';
+  static const String imagesItem1 = 'assets/images/item1.png';
+  static const String imagesItem2 = 'assets/images/item2.png';
+  static const String imagesItem3 = 'assets/images/item3.png';
+  static const String imagesItem4 = 'assets/images/item4.png';
+  static const String imagesJoker = 'assets/images/joker.png';
   static const String imagesLoginbanner = 'assets/images/loginbanner.png';
   static const String imagesLogo = 'assets/images/logo.png';
 

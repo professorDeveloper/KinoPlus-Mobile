@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kinoplusmobile/presentation/ui/screens/auth/login_screen.dart';
 import 'package:kinoplusmobile/presentation/ui/screens/home/home_screen.dart';
 
 void main() {
@@ -13,10 +14,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const HomeScreen());
+        home: LoginScreen());
   }
 }
