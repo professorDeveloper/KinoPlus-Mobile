@@ -1,0 +1,17 @@
+{
+    "enterLogin":"Login to the system",
+    "loginDesc":"You can use the following methods to log in or register.",
+    "phoneNumber":"Phone number",
+    "login":"Login",
+    "loginviaqr":"Login via QR Code",
+    "verifyphonetxt":"Verify your phone number!",
+    "sendsmscodedesc":"a 6-digit code has been sent to the phone number, please enter this code!",
+    "chooseAccountTxt":"Choose profile",
+    "registerDesc":"Please enter your personal information to complete registration",
+    "almostlyFinishTxt":"Alomostly finish...",
+    "nameTxt":"Name",
+    "surnameTxt":"Surname",
+    "enterNameTxt":"Enter your name",
+    "enterSurnameTxt":"Enter your surname",
+    "finishRegister":"Finish registration"
+    }

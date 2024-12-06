@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_device_type/flutter_device_type.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kinoplusmobile/core/constants/app_color.dart';
+import "package:flutter_gen/gen_l10n/app_localizations.dart";
 import 'package:kinoplusmobile/core/constants/app_style.dart';
 import 'package:kinoplusmobile/navigator/navigator.dart';
 import 'package:kinoplusmobile/presentation/helpers/custom_animation.dart';
@@ -49,7 +50,7 @@ class LoginScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(height: 270),
-                    Text('Tizimga kirish', style: AppStyle.daysOne20White),
+                    Text(AppLocalizations.of(context)!.enterLogin, style: AppStyle.daysOne20White),
                     const SizedBox(height: 8),
                     Text(
                       'Tizimga kirish va ro‘yxatdan o‘tish uchun siz quyidagi usullardan foydalanishingiz mumkin.',

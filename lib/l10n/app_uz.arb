@@ -1,0 +1,17 @@
+{
+    "enterLogin":"Tizimga Kirish",
+    "loginDesc":"Tizimga kirish va ro’yxatdan o’tish uchun siz quyidagi usullardan foydalanishingiz mumkin.",
+    "phoneNumber":"Telefon raqamingiz",
+    "login":"Kirish",
+    "loginviaqr":"QR Code orqali kirish",
+    "verifyphonetxt":"Telefon raqamingizni tasdiqlang!",
+    "sendsmscodedesc":"telefon raqamiga 6 xonali kod yuborildi, ushbu kodni kiriting!",
+    "chooseAccountTxt":"Akkauntni tanlang!",
+    "registerDesc":"Iltimos, ro’yxatdan o’tishni yakunlash uchun shaxsiy ma’lumotlaringizni kiriting",
+    "almostlyFinishTxt":"Deyarli yakunlandi...",
+    "nameTxt":"Ismingiz",
+    "enterNameTxt":"Ismingizni kiriting",
+    "surnameTxt":"Familiya",
+    "enterSurnameTxt":"Familiyani kiriting",
+    "finishRegister":"Ro`yxatni o’tishni yakunlash"
+}
