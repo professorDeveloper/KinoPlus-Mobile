@@ -5,7 +5,7 @@ import 'package:kinoplusmobile/core/constants/app_style.dart';
 import 'package:kinoplusmobile/navigator/navigator.dart';
 import 'package:kinoplusmobile/presentation/ui/screens/profile/choose_profile.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../../../core/constants/app_color.dart';
 import '../../../helpers/custom_animation.dart';
 
@@ -63,7 +63,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
               SizedBox(height: 18),
               Text(
                 textAlign: TextAlign.center,
-                "Telefon raqamingizni \n tasdiqlang!",
+                AppLocalizations.of(context)!.verifyphonetxt,
                 style: AppStyle.daysOne20White,
               ),
               SizedBox(height: 18),
@@ -78,7 +78,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
                         style: AppStyle.rubik16White,
                       ),
                       TextSpan(
-                        text: ' telefon raqamiga 6 xonali kod yuborildi, ushbu kodni kiriting!',
+                        text: AppLocalizations.of(context)!.sendsmscodedesc,
                         style: AppStyle.rubik16Gray2,
                       ),
                     ],
@@ -86,7 +86,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
                 ),
               ),
               SizedBox(height: 36),
-              Text("Kodni kiriting", style: AppStyle.rubik13Gray2),
+              Text(AppLocalizations.of(context)!.enterCodetxt, style: AppStyle.rubik13Gray2),
               SizedBox(height: 15),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -143,7 +143,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
                         children: [
                           Spacer(),
                           Text(
-                            "Kirish",
+                            AppLocalizations.of(context)!.login,
                             style: AppStyle.rubik16White,
                           ),
                           Spacer(),

@@ -6,6 +6,7 @@ import 'package:kinoplusmobile/presentation/ui/screens/home/home_screen.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 import '../../../../core/constants/app_color.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../../../core/constants/app_style.dart';
 import '../../../../navigator/navigator.dart';
 import '../../../helpers/custom_animation.dart';
@@ -64,13 +65,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text('Deyarli yakunlandi...',
+                    Text(AppLocalizations.of(context)!.almostlyFinishTxt,
                         style: AppStyle.daysOne20White),
                     SizedBox(
                       height: 12,
                     ),
                     Text(
-                      "Iltimos, ro’yxatdan o’tishni yakunlash uchun shaxsiy \n ma’lumotlaringizni kiriting",
+                      AppLocalizations.of(context)!.registerDesc,
                       style: AppStyle.rubik12White,
                     )
                   ],
@@ -85,7 +86,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Ismingiz",
+                      AppLocalizations.of(context)!.nameTxt,
                       style: AppStyle.rubik14White,
                     ),
                     SizedBox(
@@ -95,7 +96,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       style: AppStyle.rubik15White,
                       keyboardType: TextInputType.phone,
                       decoration: InputDecoration(
-                        hintText: "Ismingizni kiriting",
+                        hintText:AppLocalizations.of(context)!.enterNameTxt,
                         hintStyle: GoogleFonts.rubik( fontSize:15,color: AppColor.Gray2),
                         prefixIconConstraints: const BoxConstraints(
                           minWidth: 0,
@@ -127,7 +128,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Familya",
+                      AppLocalizations.of(context)!.surnameTxt,
                       style: AppStyle.rubik14White,
                     ),
                     SizedBox(
@@ -137,7 +138,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       style: AppStyle.rubik15White,
                       keyboardType: TextInputType.phone,
                       decoration: InputDecoration(
-                        hintText: "Familiyani kiriting",
+                        hintText:AppLocalizations.of(context)!.enterSurnameTxt,
                         hintStyle: GoogleFonts.rubik( fontSize:15,color: AppColor.Gray2),
                         prefixIconConstraints: const BoxConstraints(
                           minWidth: 0,
@@ -187,7 +188,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         children: [
                           Spacer(),
                           Text(
-                              "Kirish",
+                              AppLocalizations.of(context)!.login,
                               style:AppStyle.rubik16White
                           ),
                           Spacer(),

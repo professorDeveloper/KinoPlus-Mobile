@@ -6,6 +6,7 @@ import 'package:kinoplusmobile/core/constants/app_style.dart';
 import '../../../../core/constants/app_color.dart';
 import '../../../../navigator/navigator.dart';
 import '../../../helpers/custom_animation.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../auth/register_screen.dart';
 
 class ChooseAccountScreen extends StatelessWidget {
@@ -57,7 +58,7 @@ class ChooseAccountScreen extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             Text(
-              'Akkauntni tanlang!',
+              AppLocalizations.of(context)!.chooseAccountTxt,
               textAlign: TextAlign.center,
               style: GoogleFonts.daysOne(
                 fontSize: 20,
@@ -66,7 +67,7 @@ class ChooseAccountScreen extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             Text(
-              "Iltimos, ro`yxatdan o`tishni yakunlash uchun\nshaxsiy maʼlumotlaringizni kiriting",
+              AppLocalizations.of(context)!.registerDesc ,
               textAlign: TextAlign.center,
               style: AppStyle.rubik14White,
             ),
@@ -129,7 +130,7 @@ class ChooseAccountScreen extends StatelessWidget {
                         ),
                         const Spacer(),
                         Text(
-                          "Akkaunt qo’shish",
+                          AppLocalizations.of(context)!.addAccountTxt,
                           style: GoogleFonts.rubik(
                             fontSize: 15,
                             color: AppColor.White,

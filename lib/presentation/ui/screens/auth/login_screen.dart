@@ -53,14 +53,14 @@ class LoginScreen extends StatelessWidget {
                     Text(AppLocalizations.of(context)!.enterLogin, style: AppStyle.daysOne20White),
                     const SizedBox(height: 8),
                     Text(
-                      'Tizimga kirish va ro‘yxatdan o‘tish uchun siz quyidagi usullardan foydalanishingiz mumkin.',
+                      AppLocalizations.of(context)!.loginDesc,
                       style: AppStyle.rubik14Gray2,
                     ),
                     const SizedBox(height: 20),
 
                     // Phone number input
                     Text(
-                      'Telefon raqamingiz',
+                      AppLocalizations.of(context)!.phoneNumber,
                       style: AppStyle.rubik14White,
                     ),
                     const SizedBox(height: 8),
@@ -155,7 +155,7 @@ class LoginScreen extends StatelessWidget {
                             children: [
                               Spacer(),
                               Text(
-                                "Kirish",
+                                AppLocalizations.of(context)!.login,
                                 style: AppStyle.rubik16White),
                               Spacer(),
                               Icon(
@@ -168,7 +168,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 20),
-                    const CustomAnimationsSlide(
+                     CustomAnimationsSlide(
                       direction: FadeSlideDirection.btt,
                       duration: 0.8,
                       child: Row(children: <Widget>[
@@ -180,7 +180,7 @@ class LoginScreen extends StatelessWidget {
                         ),
                         SizedBox(width: 10),
                         Text(
-                          "Yoki",
+                          AppLocalizations.of(context)!.orTxt,
                           style: TextStyle(color: AppColor.Gray2),
                         ),
                         SizedBox(width: 10),
@@ -241,7 +241,7 @@ class LoginScreen extends StatelessWidget {
                                   color: Colors.white),
                               SizedBox(width: 12),
                               Text(
-                                'QR Code orqali kirish',
+                                AppLocalizations.of(context)!.loginviaqr,
                                 style: AppStyle.rubik14White
                               ),
                             ],

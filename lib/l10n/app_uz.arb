@@ -4,8 +4,9 @@
     "phoneNumber":"Telefon raqamingiz",
     "login":"Kirish",
     "loginviaqr":"QR Code orqali kirish",
-    "verifyphonetxt":"Telefon raqamingizni tasdiqlang!",
-    "sendsmscodedesc":"telefon raqamiga 6 xonali kod yuborildi, ushbu kodni kiriting!",
+    "verifyphonetxt":"Telefon raqamingizni \n tasdiqlang!",
+    "sendsmscodedesc":" telefon raqamiga 6 xonali kod yuborildi, ushbu kodni kiriting!",
+    "enterCodetxt":"Kodni kiriting",
     "chooseAccountTxt":"Akkauntni tanlang!",
     "registerDesc":"Iltimos, ro’yxatdan o’tishni yakunlash uchun shaxsiy ma’lumotlaringizni kiriting",
     "almostlyFinishTxt":"Deyarli yakunlandi...",
@@ -13,5 +14,7 @@
     "enterNameTxt":"Ismingizni kiriting",
     "surnameTxt":"Familiya",
     "enterSurnameTxt":"Familiyani kiriting",
-    "finishRegister":"Ro`yxatni o’tishni yakunlash"
+    "finishRegister":"Ro`yxatni o’tishni yakunlash",
+    "orTxt":"Yoki",
+    "addAccountTxt":"Akkaunt qo'shish"
 }

@@ -4,8 +4,10 @@
     "phoneNumber":"Phone number",
     "login":"Login",
     "loginviaqr":"Login via QR Code",
+
     "verifyphonetxt":"Verify your phone number!",
-    "sendsmscodedesc":"a 6-digit code has been sent to the phone number, please enter this code!",
+    "sendsmscodedesc":" a 6-digit code has been sent to the phone number, please enter this code!",
+    "enterCodetxt":"Enter code",
     "chooseAccountTxt":"Choose profile",
     "registerDesc":"Please enter your personal information to complete registration",
     "almostlyFinishTxt":"Alomostly finish...",
@@ -13,5 +15,8 @@
     "surnameTxt":"Surname",
     "enterNameTxt":"Enter your name",
     "enterSurnameTxt":"Enter your surname",
-    "finishRegister":"Finish registration"
+    "finishRegister":"Finish registration",
+    "orTxt":"Or",
+    "addAccountTxt":"Add account"
     }
+
