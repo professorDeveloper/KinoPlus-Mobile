@@ -184,12 +184,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget movieItem(String imagePath) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 2.0,vertical: 0),
+      margin: const EdgeInsets.symmetric(horizontal: 5,vertical: 0),
       child: Column(
         children: [
           SizedBox(
-            width: 110,
-            height: 165,
+            width: 100,
+            height: 152,
             child: Stack(
                 children: [
               Card(
@@ -234,7 +234,7 @@ class _HomeScreenState extends State<HomeScreen> {
           SizedBox(height: 4,),
           Padding(
             padding: const EdgeInsets.only(left: 2.0),
-            child: Text("Hokkeynie papi",style: AppStyle.rubik14White,),
+            child: Text("Hokkeynie papi",style: AppStyle.rubik12White,),
           )
         ],
       ),
