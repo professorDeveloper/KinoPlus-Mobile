@@ -16,5 +16,7 @@
     "enterSurnameTxt":"Familiyani kiriting",
     "finishRegister":"Ro`yxatni o’tishni yakunlash",
     "orTxt":"Yoki",
-    "addAccountTxt":"Akkaunt qo'shish"
+    "addAccountTxt":"Akkaunt qo'shish",
+    "ageTxt":"Yoshingiz",
+    "enterAgeTxt":"Necha yoshdasiz?"
 }

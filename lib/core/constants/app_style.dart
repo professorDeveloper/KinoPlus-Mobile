@@ -25,6 +25,9 @@ class AppStyle {
       GoogleFonts.rubik(color: Colors.white, fontSize: 14);
   static TextStyle rubik14WhiteBold = GoogleFonts.rubik(
       color: AppColor.White, fontWeight: FontWeight.w900, fontSize: 14);
+  static TextStyle rubik13White =
+  GoogleFonts.rubik(color: Colors.white, fontSize: 13);
+
   static TextStyle rubik13Gray2 =
       GoogleFonts.rubik(fontSize: 13, color: AppColor.Gray2);
   static TextStyle rubik12Gray2 =

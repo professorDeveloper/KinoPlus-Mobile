@@ -87,7 +87,7 @@ class ChooseAccountScreen extends StatelessWidget {
                 ProfileCard(
                   name: 'Professor \n Developer',
                   imagePath:
-                  'https://i.pinimg.com/736x/48/57/e6/4857e640770446cf057068bfbaf87e40.jpg',
+                    'https://i.pinimg.com/736x/48/57/e6/4857e640770446cf057068bfbaf87e40.jpg',
                 ),
               ],
             ),

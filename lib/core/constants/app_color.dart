@@ -13,6 +13,7 @@ static const Color Gray4=Color(0xff373D3F);
 static const Color Gray5=Color(0xff18212E);
 static const Color Gray6=Color(0xff23272E);
 static const Color Gray7=Color(0xff25272c);
+static const Color bottombg=Color(0xff272C34);
 static const Color Line=Color(0xff2C2E2F);
 static const Color Black=Color(0xff1B1E23);
 //

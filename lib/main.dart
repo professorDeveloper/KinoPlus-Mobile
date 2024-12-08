@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import "package:flutter_gen/gen_l10n/app_localizations.dart";
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:kinoplusmobile/presentation/ui/screens/auth/login_screen.dart';
 import 'package:kinoplusmobile/presentation/ui/screens/home/home_screen.dart';
+import 'package:kinoplusmobile/presentation/ui/screens/main/main_screen.dart';
 
 import 'l10n/l10n.dart';
 
@@ -32,6 +34,6 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const HomeScreen());
+        home:  MainScreen());
   }
 }

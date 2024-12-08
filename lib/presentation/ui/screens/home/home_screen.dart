@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_device_type/flutter_device_type.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kinoplusmobile/core/constants/app_color.dart';
 import 'package:kinoplusmobile/core/constants/app_images.dart';
@@ -16,21 +17,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  // Matrix4 getTransformMatrix(TransformableListItem item) {
-  //   const endScaleBound = 1.2;
-  //   final animationProgress = item.visibleExtent / item.size.height;
-  //   final paintTransform = Matrix4.identity();
-  //   if (item.position != TransformableListItemPosition.middle) {
-  //     final scale = endScaleBound + ((1 - endScaleBound) * animationProgress);
-  //     paintTransform
-  //       ..translate(item.size.width / 2)
-  //       ..scale(scale)
-  //       ..translate(-item.size.width / 2);
-  //   }
-  //   return paintTransform;
-  // }
-
-  // dot indicator
   int _current = 0;
   List<String> bannerList = ["Joker2", "Qahramonlar jangi", "Blalalblalala"];
   List<String> bannerDesc = [
@@ -44,213 +30,263 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: AppColor.Black,
       body: SingleChildScrollView(
-          child: Stack(children: [
-        CarouselSlider.builder(
-          itemCount: bannerList.length,
-          itemBuilder: (context, index, realIndex) {
-            return Stack(
+          padding: EdgeInsets.all(0),
+          child: Column(children: [
+            Stack(
               children: [
                 Container(
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(AppImages.homeBanner),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  height: 372,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [
-                          AppColor.Black.withOpacity(1),
-                          Colors.transparent,
+                  height: Device.get().isAndroid?370:380,
+                  child: CarouselSlider.builder(
+
+                    itemCount: bannerList.length,
+                    itemBuilder: (context, index, realIndex) {
+                      return Stack(
+                        children: [
+                          Container(
+                            decoration:  BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage(AppImages.homeBanner),
+                                fit: BoxFit.cover,
+                              ),
+                              gradient: LinearGradient(
+                                colors: [
+                                  AppColor.Black.withOpacity(1),
+                                  AppColor.Black.withOpacity(1),
+                                  Colors.transparent,
+                                ],
+                                begin: Alignment.bottomCenter,
+                                end: Alignment.topCenter,
+                              ),
+
+                            ),
+                            height: Device.get().isAndroid?370:380,
+                          ),
+                          Container(
+                            width: double.infinity,
+                            height: Device.get().isAndroid?370:380,
+                            decoration:  BoxDecoration(
+
+                              gradient: LinearGradient(
+                                colors: [
+                                  AppColor.Black.withOpacity(1),
+                                  AppColor.Black.withOpacity(0.5),
+                                  Colors.transparent,
+                                ],
+                                begin: Alignment.bottomCenter,
+                                end: Alignment.topCenter,
+                              ),
+
+                            ),
+
+                          ),
+
+                           Padding(
+                            padding:
+                                EdgeInsets.only(left: 18.0, top: Device.get().isAndroid?25:30, right: 12),
+                            child: Row(
+                              children: [
+                                Image(
+                                    width: 35,
+                                    height: 35,
+                                    image: AssetImage(AppImages.iconPlus)),
+                                Spacer(),
+                              ],
+                            ),
+                          ),
+                          Positioned(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  bannerList[_current],
+                                  style: AppStyle.daysOne25White,
+                                ),
+                                Text(
+                                  bannerDesc[_current],
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: AppStyle.rubik14Gray2
+                                ),
+                              ],
+                            ),
+                            right: 20,
+                            left: 15,
+                            bottom: 10,
+                          ),
+                          // Positioned(child: Column(
+                          //   crossAxisAlignment: CrossAxisAlignment.start,
+                          //
+                          //   children: [
+                          //     Text(bannerList[_current],
+                          //         style: AppStyle.daysOne25White),
+                          //     Text(
+                          //       bannerDesc[_current],
+                          //       maxLines: 2,
+                          //       overflow: TextOverflow.ellipsis,
+                          //       style: AppStyle.rubik14Gray2,
+                          //     ),
+                          //   ],
+                          // ), right: 20, left: 15,bottom: 10,)
                         ],
-                        begin: Alignment.bottomCenter,
-                        end: Alignment.topCenter,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            );
-          },
-          options: CarouselOptions(
-            height: 372,
-            viewportFraction: 1.01,
-            initialPage: 0,
-            autoPlay: false,
-            autoPlayInterval: const Duration(seconds: 5),
-            autoPlayAnimationDuration: const Duration(milliseconds: 800),
-            autoPlayCurve: Curves.fastOutSlowIn,
-            enlargeCenterPage: false,
-            onPageChanged: (index, reason) {
-              setState(() {
-                _current = index;
-              });
-            },
-            scrollDirection: Axis.horizontal,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(left: 18.0, top: 25, right: 12),
-          child: Row(
-            children: [
-              const Image(
-                  width: 35, height: 35, image: AssetImage(AppImages.iconPlus)),
-              const Spacer(),
-              IconButton(
-                onPressed: () {},
-                icon: const Image(
-                  image: AssetImage(AppImages.searchIcon),
-                  width: 30,
-                  height: 30,
-                ),
-              ),
-            ],
-          ),
-        ),
-        SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 0.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(height: 260),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                  child: Text(bannerList[_current],
-                      style: AppStyle.daysOne25White),
-                ),
-                const SizedBox(height: 8),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                  child: Text(
-                    bannerDesc[_current],
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: AppStyle.rubik14Gray2,
-                  ),
-                ),
-                const SizedBox(height: 10),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: List.generate(bannerList.length, (index) {
-                      return Container(
-                        width: 8.0,
-                        height: 8.0,
-                        margin: const EdgeInsets.symmetric(
-                            vertical: 10.0, horizontal: 5.0),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: _current == index
-                              ? AppColor.Red2
-                              : AppColor.Gray2,
-                        ),
                       );
-                    }),
-                  ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                HeadWidget(
-                  text: "Onlayn TV",
-                  iconData: CupertinoIcons.right_chevron,
-                  onPressed: () {},
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 2.0, right: 5),
-                  child: SizedBox(
-                    height: 120,
-                    width: double.infinity,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: 13,
-                      itemBuilder: (context, index) {
-                        return liveTvItem(AppImages.homeBanner);
+                    },
+                    options: CarouselOptions(
+                      height: 372,
+                      viewportFraction: 1.01,
+                      initialPage: 0,
+                      autoPlay: false,
+                      autoPlayInterval: const Duration(seconds: 5),
+                      autoPlayAnimationDuration:
+                          const Duration(milliseconds: 800),
+                      autoPlayCurve: Curves.fastOutSlowIn,
+                      enlargeCenterPage: false,
+                      onPageChanged: (index, reason) {
+                        setState(() {
+                          _current = index;
+                        });
                       },
+                      scrollDirection: Axis.horizontal,
                     ),
                   ),
                 ),
-                HeadWidget(
-                  text: "Eng ko’p ko’rilgan filmlar",
-                  iconData: CupertinoIcons.right_chevron,
-                  onPressed: () {},
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 2.0, right: 5),
-                  child: SizedBox(
-                    height: 220,
-                    width: double.infinity,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: 13,
-                      itemBuilder: (context, index) {
-                        return movieItem(AppImages.imagesItem1);
-                      },
-                    ),
-                  ),
-                ),
-                HeadWidget(text: 'Shorts', onPressed: () {}),
-                Padding(
-                  padding: const EdgeInsets.only(left: 2.0, right: 5),
-                  child: SizedBox(
-                    height: 220,
-                    width: double.infinity,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: 13,
-                      itemBuilder: (context, index) {
-                        return shortItem(AppImages.imagesItem1);
-                      },
-                    ),
-                  ),
-                ),
-                HeadWidget(
-                  text: "Eng ko’p ko’rilgan filmlar",
-                  iconData: CupertinoIcons.right_chevron,
-                  onPressed: () {},
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 2.0, right: 5),
-                  child: SizedBox(
-                    height: 220,
-                    width: double.infinity,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: 13,
-                      itemBuilder: (context, index) {
-                        return movieItem(AppImages.imagesItem1);
-                      },
-                    ),
-                  ),
-                ),
-                HeadWidget(
-                  text: 'Multfilmlar',
-                  onPressed: () {},
-                  iconData: CupertinoIcons.right_chevron,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 2.0, right: 5),
-                  child: SizedBox(
-                    height: 200,
-                    width: double.infinity,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: 13,
-                      itemBuilder: (context, index) {
-                        return multiCard(AppImages.imagesItem3);
-                      },
+                Positioned(
+                  top: Device.get().isAndroid?20:30,
+                  right: 12,
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: const Image(
+                      image: AssetImage(AppImages.searchIcon),
+                      width: 30,
+                      height: 30,
                     ),
                   ),
                 ),
               ],
             ),
-          ),
-        ),
-      ])),
+            SafeArea(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 0.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: List.generate(bannerList.length, (index) {
+                          return Container(
+                            width: 8.0,
+                            height: 8.0,
+                            margin: const EdgeInsets.symmetric( horizontal: 5.0),
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: _current == index
+                                  ? AppColor.Red2
+                                  : AppColor.Gray2,
+                            ),
+                          );
+                        }),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    HeadWidget(
+                      text: "Onlayn TV",
+                      iconData: CupertinoIcons.right_chevron,
+                      onPressed: () {},
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 2.0, right: 5),
+                      child: SizedBox(
+                        height: 120,
+                        width: double.infinity,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: 13,
+                          itemBuilder: (context, index) {
+                            return liveTvItem(AppImages.homeBanner);
+                          },
+                        ),
+                      ),
+                    ),
+                    HeadWidget(
+                      text: "Eng ko’p ko’rilgan filmlar",
+                      iconData: CupertinoIcons.right_chevron,
+                      onPressed: () {},
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 2.0, right: 5),
+                      child: SizedBox(
+                        height: 220,
+                        width: double.infinity,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: 13,
+                          itemBuilder: (context, index) {
+                            return movieItem(AppImages.imagesItem1);
+                          },
+                        ),
+                      ),
+                    ),
+                    HeadWidget(text: 'Shorts', onPressed: () {}),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 2.0, right: 5),
+                      child: SizedBox(
+                        height: 220,
+                        width: double.infinity,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: 13,
+                          itemBuilder: (context, index) {
+                            return shortItem(AppImages.imagesItem1);
+                          },
+                        ),
+                      ),
+                    ),
+                    HeadWidget(
+                      text: "Eng ko’p ko’rilgan filmlar",
+                      iconData: CupertinoIcons.right_chevron,
+                      onPressed: () {},
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 2.0, right: 5),
+                      child: SizedBox(
+                        height: 220,
+                        width: double.infinity,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: 13,
+                          itemBuilder: (context, index) {
+                            return movieItem(AppImages.imagesItem1);
+                          },
+                        ),
+                      ),
+                    ),
+                    HeadWidget(
+                      text: 'Multfilmlar',
+                      onPressed: () {},
+                      iconData: CupertinoIcons.right_chevron,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 2.0, right: 5),
+                      child: SizedBox(
+                        height: 200,
+                        width: double.infinity,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: 13,
+                          itemBuilder: (context, index) {
+                            return multiCard(AppImages.imagesItem3);
+                          },
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ])),
     );
   }
 
@@ -478,10 +514,6 @@ class _HomeScreenState extends State<HomeScreen> {
         ));
   }
 }
-
-
-
-
 
 // Stack(
 //           alignment: Alignment.center,

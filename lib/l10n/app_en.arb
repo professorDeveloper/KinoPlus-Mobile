@@ -17,6 +17,8 @@
     "enterSurnameTxt":"Enter your surname",
     "finishRegister":"Finish registration",
     "orTxt":"Or",
-    "addAccountTxt":"Add account"
+    "addAccountTxt":"Add account",
+    "ageTxt":"Age",
+    "enterAgeTxt":"How old are you ?"
     }
 
