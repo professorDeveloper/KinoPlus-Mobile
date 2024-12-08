@@ -4,15 +4,17 @@ class Assets {
 
   static const String icons18plus = 'assets/icons/18plus.png';
   static const String iconsAppleicon = 'assets/icons/appleicon.png';
+  static const String iconsCategoryicon = 'assets/icons/categoryicon.svg';
+  static const String iconsChaticon = 'assets/icons/chaticon.svg';
   static const String iconsFacebookicon = 'assets/icons/facebookicon.png';
   static const String iconsGoogleicon = 'assets/icons/googleicon.png';
   static const String iconsHomeicon = 'assets/icons/homeicon.svg';
   static const String iconsImdbicon = 'assets/icons/imdbicon.png';
+  static const String iconsProfileicon = 'assets/icons/profileicon.svg';
   static const String iconsSearchicon = 'assets/icons/searchicon.png';
   static const String iconsShortsicon = 'assets/icons/shortsicon.svg';
-  static const String iconsCategoryicon = 'assets/icons/categoryicon.svg';
   static const String iconsTvicon = 'assets/icons/tvicon.svg';
-  static const String profileIcon = 'assets/icons/profileicon.svg';
+  static const String ickk = 'assets/icons/dropdown.svg';
   static const String imagesHomebanner = 'assets/images/homebanner.png';
   static const String imagesItem1 = 'assets/images/item1.png';
   static const String imagesItem2 = 'assets/images/item2.png';

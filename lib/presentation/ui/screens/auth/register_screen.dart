@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_device_type/flutter_device_type.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kinoplusmobile/presentation/ui/screens/home/home_screen.dart';
+import 'package:kinoplusmobile/presentation/ui/screens/main/main_screen.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 import '../../../../core/constants/app_color.dart';
@@ -181,7 +182,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                       ),
                       onPressed: () {
-                        openScreen(context, HomeScreen());
+                        openScreen(context, MainScreen());
                       },
                       child:  Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -19,6 +19,8 @@
     "orTxt":"Or",
     "addAccountTxt":"Add account",
     "ageTxt":"Age",
-    "enterAgeTxt":"How old are you ?"
+    "enterAgeTxt":"How old are you ?",
+    "enterRegionTxt": "Choose your region",
+    "enterCityTxt": "Choose your city"
     }
 
