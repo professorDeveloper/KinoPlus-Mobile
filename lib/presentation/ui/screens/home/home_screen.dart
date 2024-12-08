@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kinoplusmobile/core/constants/app_color.dart';
 import 'package:kinoplusmobile/core/constants/app_images.dart';
+import 'package:kinoplusmobile/presentation/ui/screens/home/widgets/head_widget.dart';
 
 import '../../../../core/constants/app_style.dart';
 
@@ -15,6 +16,20 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  // Matrix4 getTransformMatrix(TransformableListItem item) {
+  //   const endScaleBound = 1.2;
+  //   final animationProgress = item.visibleExtent / item.size.height;
+  //   final paintTransform = Matrix4.identity();
+  //   if (item.position != TransformableListItemPosition.middle) {
+  //     final scale = endScaleBound + ((1 - endScaleBound) * animationProgress);
+  //     paintTransform
+  //       ..translate(item.size.width / 2)
+  //       ..scale(scale)
+  //       ..translate(-item.size.width / 2);
+  //   }
+  //   return paintTransform;
+  // }
+
   // dot indicator
   int _current = 0;
   List<String> bannerList = ["Joker2", "Qahramonlar jangi", "Blalalblalala"];
@@ -80,12 +95,12 @@ class _HomeScreenState extends State<HomeScreen> {
           padding: const EdgeInsets.only(left: 18.0, top: 25, right: 12),
           child: Row(
             children: [
-              Image(
+              const Image(
                   width: 35, height: 35, image: AssetImage(AppImages.iconPlus)),
-              Spacer(),
+              const Spacer(),
               IconButton(
                 onPressed: () {},
-                icon: Image(
+                icon: const Image(
                   image: AssetImage(AppImages.searchIcon),
                   width: 30,
                   height: 30,
@@ -100,20 +115,23 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(height: 250),
+                const SizedBox(height: 260),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                  child: Text(bannerList[_current], style: AppStyle.daysOne25White),
+                  child: Text(bannerList[_current],
+                      style: AppStyle.daysOne25White),
                 ),
                 const SizedBox(height: 8),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 12.0),
                   child: Text(
                     bannerDesc[_current],
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
                     style: AppStyle.rubik14Gray2,
                   ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 10),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 12.0),
                   child: Row(
@@ -126,54 +144,108 @@ class _HomeScreenState extends State<HomeScreen> {
                             vertical: 10.0, horizontal: 5.0),
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color:
-                              _current == index ? AppColor.Red2 : AppColor.Gray2,
+                          color: _current == index
+                              ? AppColor.Red2
+                              : AppColor.Gray2,
                         ),
                       );
                     }),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                  child: MaterialButton(
-
-                    padding: EdgeInsets.all(0),
-                    onPressed: () {},
-                    child: Row(
-                      children: [
-                        Text(
-                          "Eng ko’p ko’rilgan filmlar",
-                          style: AppStyle.daysOne18White,
-                        ),
-                        Spacer(),
-                        Icon(
-                          CupertinoIcons.right_chevron,
-                          color: Colors.white,
-                          size: 21,
-                        ),
-                        SizedBox(
-                          width: 5,
-                        )
-                      ],
-                    ),
-                  ),
+                HeadWidget(
+                  text: "Onlayn TV",
+                  iconData: CupertinoIcons.right_chevron,
+                  onPressed: () {},
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 2.0,right: 5),
-                  child: Container(
-                    height: 400,
+                  padding: const EdgeInsets.only(left: 2.0, right: 5),
+                  child: SizedBox(
+                    height: 120,
                     width: double.infinity,
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemCount: 13,
-                      itemBuilder: (context,index){
-                      return movieItem(AppImages.imagesItem1);
-                    },),
+                      itemBuilder: (context, index) {
+                        return liveTvItem(AppImages.homeBanner);
+                      },
+                    ),
                   ),
-                )
+                ),
+                HeadWidget(
+                  text: "Eng ko’p ko’rilgan filmlar",
+                  iconData: CupertinoIcons.right_chevron,
+                  onPressed: () {},
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 2.0, right: 5),
+                  child: SizedBox(
+                    height: 220,
+                    width: double.infinity,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 13,
+                      itemBuilder: (context, index) {
+                        return movieItem(AppImages.imagesItem1);
+                      },
+                    ),
+                  ),
+                ),
+                HeadWidget(text: 'Shorts', onPressed: () {}),
+                Padding(
+                  padding: const EdgeInsets.only(left: 2.0, right: 5),
+                  child: SizedBox(
+                    height: 220,
+                    width: double.infinity,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 13,
+                      itemBuilder: (context, index) {
+                        return shortItem(AppImages.imagesItem1);
+                      },
+                    ),
+                  ),
+                ),
+                HeadWidget(
+                  text: "Eng ko’p ko’rilgan filmlar",
+                  iconData: CupertinoIcons.right_chevron,
+                  onPressed: () {},
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 2.0, right: 5),
+                  child: SizedBox(
+                    height: 220,
+                    width: double.infinity,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 13,
+                      itemBuilder: (context, index) {
+                        return movieItem(AppImages.imagesItem1);
+                      },
+                    ),
+                  ),
+                ),
+                HeadWidget(
+                  text: 'Multfilmlar',
+                  onPressed: () {},
+                  iconData: CupertinoIcons.right_chevron,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 2.0, right: 5),
+                  child: SizedBox(
+                    height: 200,
+                    width: double.infinity,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 13,
+                      itemBuilder: (context, index) {
+                        return multiCard(AppImages.imagesItem3);
+                      },
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
@@ -184,17 +256,16 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget movieItem(String imagePath) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 5,vertical: 0),
+      margin: const EdgeInsets.symmetric(horizontal: 2, vertical: 0),
       child: Column(
         children: [
           SizedBox(
-            width: 100,
-            height: 152,
-            child: Stack(
-                children: [
+            width: 110,
+            height: 162,
+            child: Stack(children: [
               Card(
                 elevation: 1,
-                shadowColor: AppColor.Black.withOpacity(1),
+                shadowColor: AppColor.White.withOpacity(0.33),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
@@ -207,37 +278,266 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               Positioned(
-                left: 10,
+                  left: 10,
                   bottom: 12,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Image(
-                    image: AssetImage(AppImages.imdbicon),
-                    width: 30,
-                    height: 30,
-                  ),
-                  SizedBox(width: 3,),
-                  Padding(
-                    padding: EdgeInsets.only(top: 2),
-                    child: Text("7.5",style: GoogleFonts.rubik(
-                      fontSize: 13,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.white
-                    ),),
-                  )
-                ],
-              ))
+                    children: [
+                      const Image(
+                        image: AssetImage(AppImages.imdbicon),
+                        width: 30,
+                        height: 30,
+                      ),
+                      const SizedBox(
+                        width: 3,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 2),
+                        child: Text(
+                          "7.5",
+                          style: GoogleFonts.rubik(
+                              fontSize: 13,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.white),
+                        ),
+                      )
+                    ],
+                  ))
             ]),
           ),
-          SizedBox(height: 4,),
-          Padding(
-            padding: const EdgeInsets.only(left: 2.0),
-            child: Text("Hokkeynie papi",style: AppStyle.rubik12White,),
+          const SizedBox(
+            height: 4,
+          ),
+          Container(
+            width: 110,
+            color: Colors.transparent,
+            child: Padding(
+              padding: const EdgeInsets.only(
+                left: 5.0,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Hokkeynie papi",
+                    style: AppStyle.rubik12White,
+                  ),
+                  const SizedBox(
+                    height: 2,
+                  ),
+                  Text(
+                    "Obuna",
+                    style: AppStyle.rubik12White,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget liveTvItem(String imagePath) {
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 2, vertical: 0),
+      child: Column(
+        children: [
+          SizedBox(
+            width: 91,
+            height: 82,
+            child: Card(
+              elevation: 1,
+              shadowColor: AppColor.Black.withOpacity(1),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image.asset(
+                  imagePath,
+                  fit: BoxFit.fill,
+                  height: 82,
+                  width: 90,
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 4,
+          ),
+          Container(
+            width: 70,
+            color: Colors.transparent,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "FTV",
+                  style: AppStyle.rubik12White,
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget shortItem(String imagePath) {
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 0),
+      child: Stack(
+        children: [
+          Container(
+            height: 208,
+            width: 140,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              image: DecorationImage(
+                image: AssetImage(imagePath),
+                fit: BoxFit.cover,
+              ),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    "Lorem Ipsum is simply dummy text...",
+                    style: AppStyle.rubik14White,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ],
+              ),
+            ),
+          ),
+          const Positioned(
+            top: 70,
+            left: 42,
+            child: Icon(
+              Icons.play_arrow_rounded,
+              color: Colors.white,
+              size: 50,
+            ),
           )
         ],
       ),
     );
   }
+
+  Widget multiCard(String imagePath) {
+    return Container(
+        // height: 10,
+        margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 0),
+        child: Stack(
+          children: [
+            Container(
+              height: 162,
+              width: 110,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                image: DecorationImage(
+                  image: AssetImage(imagePath),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 2,
+            ),
+            Container(
+              height: 162,
+              width: 110,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                image: DecorationImage(
+                  image: AssetImage(imagePath),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 2,
+            ),
+            Container(
+              height: 162,
+              width: 110,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                image: DecorationImage(
+                  image: AssetImage(imagePath),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          ],
+        ));
+  }
 }
+
+
+
+
+
+// Stack(
+//           alignment: Alignment.center,
+//           children: <Widget>[
+//             Positioned(
+//               top: 10,
+//               child: Card(
+//                 elevation: 4,
+//                 color: Color.fromARGB(255, 0, 0, 255),
+//                 shape: RoundedRectangleBorder(
+//                     borderRadius: BorderRadius.circular(10)),
+//                 child: Container(
+//                   width: 200,
+//                   height: 300,
+//                 ),
+//               ),
+//             ),
+//             Positioned(
+//               top: 20,
+//               child: Card(
+//                 elevation: 8,
+//                 color: Color.fromARGB(255, 0, 255, 0),
+//                 shape: RoundedRectangleBorder(
+//                     borderRadius: BorderRadius.circular(10)),
+//                 child: Container(
+//                   width: 220,
+//                   height: 300,
+//                 ),
+//               ),
+//             ),
+//             Positioned(
+//               top: 30,
+//               child: Draggable(
+//                   childWhenDragging: Container(),
+//                   feedback: Card(
+//                   elevation: 12,
+//                   color: Color.fromARGB(255, 200, 0, 0),
+//                   shape: RoundedRectangleBorder(
+//                       borderRadius: BorderRadius.circular(10)),
+//                   child: Container(
+//                     width: 240,
+//                     height: 300,
+//                   ),
+//                 ),
+//                   child: Card(
+//                   elevation: 12,
+//                   color: Color.fromARGB(255, 200, 0, 0),
+//                   shape: RoundedRectangleBorder(
+//                       borderRadius: BorderRadius.circular(10)),
+//                   child: Container(
+//                     width: 240,
+//                     height: 300,
+//                   ),
+//                 ),
+//               ),
+//             )
+//           ],
+//         ),
+//       ),
