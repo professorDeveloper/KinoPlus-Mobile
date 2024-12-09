@@ -18,5 +18,7 @@
     "orTxt":"Yoki",
     "addAccountTxt":"Akkaunt qo'shish",
     "ageTxt":"Yoshingiz",
-    "enterAgeTxt":"Necha yoshdasiz?"
+    "enterAgeTxt":"Necha yoshdasiz?",
+    "enterRegionTxt": "Viloyatni tanlang",
+    "enterCityTxt": "Shaharni tanlang"
 }

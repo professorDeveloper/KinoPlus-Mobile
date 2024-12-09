@@ -16,6 +16,8 @@ class AppImages {
   static const String homeBanner = 'assets/images/homebanner.png';
   static const String joker = 'assets/images/joker.png';
   static const String homeIcon = 'assets/icons/homeicon.svg';
+  static const String chatIcon='assets/icons/chaticon.svg';
+  static const String dropdownIcon='assets/icons/dropdown.svg';
   static const String categoryIcon = 'assets/icons/categoryicon.svg';
   static const String shortsIcon = 'assets/icons/shortsicon.svg';
   static const String tvIcon = 'assets/icons/tvicon.svg';
