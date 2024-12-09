@@ -21,4 +21,14 @@ class AppImages {
   static const String tvIcon = 'assets/icons/tvicon.svg';
   static const String profileIcon = 'assets/icons/profileicon.svg';
 
+  static const String profileImg = 'assets/images/profile.png';
+  static const String supermanIcon = 'assets/icons/superman.png';
+
+  static const String bolt = 'assets/icons/bolt.svg';
+  static const String bookmark = 'assets/icons/bookmark.svg';
+  static const String chartLine = 'assets/icons/chart-line-up.svg';
+  static const String creditCard = 'assets/icons/credit-card.svg';
+  static const String film = 'assets/icons/film.svg';
+  static const String time = 'assets/icons/time.svg';
+  static const String users = 'assets/icons/users.svg';
 }
