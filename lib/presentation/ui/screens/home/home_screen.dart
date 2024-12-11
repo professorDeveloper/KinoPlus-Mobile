@@ -224,7 +224,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           scrollDirection: Axis.horizontal,
                           itemCount: 13,
                           itemBuilder: (context, index) {
-                            return movieItem(AppImages.imagesItem1);
+                            return movieItem(AppImages.imagesItem3);
                           },
                         ),
                       ),
@@ -277,7 +277,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           scrollDirection: Axis.horizontal,
                           itemCount: 13,
                           itemBuilder: (context, index) {
-                            return multiCard(AppImages.imagesItem3);
+                            return multiCard(AppImages.imagesItem4);
                           },
                         ),
                       ),
@@ -364,7 +364,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   Text(
                     "Obuna",
-                    style: AppStyle.rubik12White,
+                    style: AppStyle.dayOne12Red,
                   ),
                 ],
               ),

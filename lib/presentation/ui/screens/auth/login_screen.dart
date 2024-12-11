@@ -7,12 +7,24 @@ import 'package:kinoplusmobile/core/constants/app_style.dart';
 import 'package:kinoplusmobile/navigator/navigator.dart';
 import 'package:kinoplusmobile/presentation/helpers/custom_animation.dart';
 import 'package:kinoplusmobile/presentation/ui/screens/auth/verify_screen.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 import '../../../../core/constants/app_images.dart';
 import 'login_qr.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class LoginScreen extends StatefulWidget {
+   LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  var maskFormatter = new MaskTextInputFormatter(
+      mask: '(##)-###-##-##',
+      filter: { "#": RegExp(r'[0-9]') },
+      type: MaskAutoCompletionType.lazy
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +77,12 @@ class LoginScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 8),
                     TextField(
-                      style: AppStyle.rubik15White,
+                      inputFormatters: [maskFormatter],
+                      style: GoogleFonts.rubik(
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
+                      ),
                       keyboardType: TextInputType.phone,
                       decoration: InputDecoration(
                         hintStyle: TextStyle(color: AppColor.Gray2),
@@ -75,8 +92,8 @@ class LoginScreen extends StatelessWidget {
                             '+998',
                             style: GoogleFonts.rubik(
                               color: Colors.white,
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w700,
                             ),
                           ),
                         ),

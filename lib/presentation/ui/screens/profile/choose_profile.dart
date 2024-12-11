@@ -116,8 +116,10 @@ class ChooseAccountScreen extends StatelessWidget {
                       children: [
                         FloatingActionButton(
                           mini: true,
-                          onPressed: () {},
-                          backgroundColor: const Color(0xff492d2e),
+                          onPressed: () {
+                            openScreen(context, RegisterScreen());
+                          },
+                          backgroundColor: const Color(0x1AFE4545),
                           elevation: 0,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30),

@@ -95,7 +95,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                     TextField(
                       style: AppStyle.rubik15White,
-                      keyboardType: TextInputType.phone,
+                      keyboardType: TextInputType.name,
                       decoration: InputDecoration(
                         hintText:AppLocalizations.of(context)!.enterNameTxt,
                         hintStyle: GoogleFonts.rubik( fontSize:15,color: AppColor.Gray2),
@@ -137,7 +137,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                     TextField(
                       style: AppStyle.rubik15White,
-                      keyboardType: TextInputType.phone,
+                      keyboardType: TextInputType.name,
                       decoration: InputDecoration(
                         hintText:AppLocalizations.of(context)!.enterSurnameTxt,
                         hintStyle: GoogleFonts.rubik( fontSize:15,color: AppColor.Gray2),

@@ -34,6 +34,11 @@ class AppStyle {
       GoogleFonts.rubik(fontSize: 12, color: AppColor.Gray2);
   static TextStyle rubik12White =
       GoogleFonts.rubik(fontSize: 12, color: AppColor.White);
+  static TextStyle rubik11White =
+  GoogleFonts.rubik(fontSize: 11, color: AppColor.White);
+
+  static TextStyle rubik12Red =
+  GoogleFonts.rubik(fontSize: 12, color: AppColor.Red);
   static TextStyle daysOne25White =
   GoogleFonts.daysOne(fontSize: 25, color: Colors.white);
 
@@ -52,6 +57,11 @@ class AppStyle {
     color: Colors.white,
     fontWeight: FontWeight.w700,
     fontSize: 13,
+  );
+
+  static TextStyle dayOne12Red = GoogleFonts.rubik(
+    color: AppColor.Red2,
+    fontSize: 12,
   );
 
 }

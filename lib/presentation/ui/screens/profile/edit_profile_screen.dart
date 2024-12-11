@@ -21,13 +21,17 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     return Scaffold(
       backgroundColor: AppColor.Black,
       appBar: AppBar(
+        titleSpacing: 0,
         elevation: 0,
         backgroundColor: AppColor.Black,
         centerTitle: false,
 
-        title: Text(
-          "Mening akkauntlarim",
-          style: AppStyle.dayOne14White,
+        title: Padding(
+          padding: const EdgeInsets.only(left: 5),
+          child: Text(
+            "Mening akkauntlarim",
+            style: AppStyle.dayOne14White,
+          ),
         ),
         leading: IconButton(
           icon: const Icon(CupertinoIcons.back, size: 30, color: AppColor.White),

@@ -19,7 +19,7 @@ final List<Widget> screens = [
   ShortsScreen(),
   TvScreen(),
   EditProfileScreen(),
-  EditProfileScreen(),
+  ProfileScreen(),
 ];
 
 TextTheme createTextTheme(
