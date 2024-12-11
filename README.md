@@ -1,5 +1,19 @@
-<h1 align="center">Kinoplus Mobile</h1>
+# Kinoplus Mobile 
 
+## Screens 
+![image](https://github.com/user-attachments/assets/ae79c5ad-5dc7-4377-8d93-3fe296109539)
+
+
+## Features
+Flutter 
+Bloc
+Clean architecture
+MVVM MVI GIT
+
+### 🎥 **Why Choose Us?**
+- **10,000+ movies and TV shows** available for streaming.
+- High-quality streaming for an immersive viewing experience.
+- **Multi-device support**: Available on both **Android** and **iOS** devices.
 <p align="center">
   <img src="https://github.com/user-attachments/assets/1abed547-be62-4fa8-99bd-569ecbd7e929" height="100px" />
   <br />
