@@ -1,9 +1,5 @@
 # Kinoplus Mobile 
 
-## Screens 
-![image](https://github.com/user-attachments/assets/ae79c5ad-5dc7-4377-8d93-3fe296109539)
-
-
 ## Features
 Flutter 
 Bloc
@@ -51,6 +47,11 @@ New titles are updated on the app daily to make sure fun never ends on Kino-Plus
   <img src="https://github.com/user-attachments/assets/cba9abcc-a015-4ac1-a9ac-74157a841023" alt="Streamflix Preview">
 
 </p>
+
+
+## Screens Mobile
+![image](https://github.com/user-attachments/assets/ae79c5ad-5dc7-4377-8d93-3fe296109539)
+
 
 ## Features
 Flutter 
