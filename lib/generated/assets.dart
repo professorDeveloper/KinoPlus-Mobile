@@ -12,6 +12,7 @@ class Assets {
   static const String iconsCreditCard = 'assets/icons/credit-card.svg';
   static const String iconsDeleteicon = 'assets/icons/deleteicon.svg';
   static const String iconsDropdown = 'assets/icons/dropdown.svg';
+  static const String iconsEditicon = 'assets/icons/editicon.svg';
   static const String iconsFacebookicon = 'assets/icons/facebookicon.png';
   static const String iconsFilm = 'assets/icons/film.svg';
   static const String iconsGoogleicon = 'assets/icons/googleicon.png';

@@ -176,7 +176,7 @@ class ProfileCard extends StatelessWidget {
               child: Icon(
                 Icons.more_vert,
                 color: Colors.white,
-                size: 30,
+                size: 28,
               ),
               menuBuilder: () {
                 return Container(

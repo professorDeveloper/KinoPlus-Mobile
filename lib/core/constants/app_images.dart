@@ -11,6 +11,7 @@ class AppImages {
   static const String iconPlus = 'assets/icons/18plus.png';
   static const String imagesItem1 = 'assets/images/item1.png';
   static const String editIcon='assets/icons/editicon.svg';
+  static const String walletIcon='assets/icons/walleticon.svg';
   static const String qrImage="assets/images/qrcode.png";
   static const String deleteProfiIcon='assets/icons/deleteicon.svg';
   static const String imagesItem2 = 'assets/images/item2.png';
