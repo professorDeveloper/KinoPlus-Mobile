@@ -15,7 +15,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   MyApp({super.key});
-  Locale locale = L10n.all[1];
+  Locale locale = L10n.all[0];
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {

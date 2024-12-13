@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kinoplusmobile/core/constants/app_color.dart';
 import 'package:kinoplusmobile/core/constants/app_style.dart';
 import 'package:kinoplusmobile/navigator/navigator.dart';
+import 'package:kinoplusmobile/presentation/ui/screens/accounts/add_account.dart';
 import 'package:kinoplusmobile/presentation/ui/screens/my/my_accounts.dart';
 import 'package:kinoplusmobile/presentation/ui/screens/my/myfilms_screen.dart';
 
@@ -134,32 +135,37 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
                       ],
                     ),
                     const SizedBox(height: 16),
-                    Row(
-                      children: [
-                        const CircleAvatar(
-                          radius: 25,
-                          backgroundColor: Color.fromARGB(18, 244, 67, 54),
-                          child: CircleAvatar(
-                            radius: 24,
-                            backgroundColor: Color.fromARGB(19, 197, 49, 38),
-                            child: Icon(
-                              Icons.add_rounded,
-                              color: AppColor.Red2,
-                              size: 40,
+                    GestureDetector(
+                      onTap: (){
+                        openScreen(context, AddAccountScreen());
+                      },
+                      child: Row(
+                        children: [
+                          const CircleAvatar(
+                            radius: 25,
+                            backgroundColor: Color.fromARGB(18, 244, 67, 54),
+                            child: CircleAvatar(
+                              radius: 24,
+                              backgroundColor: Color.fromARGB(19, 197, 49, 38),
+                              child: Icon(
+                                Icons.add_rounded,
+                                color: AppColor.Red2,
+                                size: 40,
+                              ),
                             ),
                           ),
-                        ),
-                        const SizedBox(width: 15),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Yangi akkaunt qo’shish',
-                              style: AppStyle.dayOne15White,
-                            ),
-                          ],
-                        ),
-                      ],
+                          const SizedBox(width: 15),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Yangi akkaunt qo’shish',
+                                style: AppStyle.dayOne15White,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                     const SizedBox(height: 10),
                     const Divider(

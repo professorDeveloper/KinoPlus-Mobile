@@ -3,10 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:kinoplusmobile/navigator/navigator.dart';
 
 import '../../../../core/constants/app_color.dart';
 import '../../../../core/constants/app_images.dart';
 import '../../../../core/constants/app_style.dart';
+import '../../../helpers/custom_animation.dart';
+import 'choose_profile.dart';
 
 class EditProfileScreen extends StatefulWidget {
   const EditProfileScreen({Key? key}) : super(key: key);
@@ -19,13 +22,50 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 18.0,vertical: 30),
+        child: CustomAnimationsSlide(
+          direction: FadeSlideDirection.btt,
+          duration: 0.8,
+          child: SizedBox(
+            width: double.infinity,
+            height: 50,
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                elevation: 0,
+                backgroundColor: AppColor.Red,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
+              onPressed: () {
+                closeScreen(context);
+              },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Spacer(),
+                  Text(
+                    "Saqlash",
+                    style: AppStyle.rubik15White,
+                  ),
+                  Spacer(),
+                  Icon(
+                    Icons.arrow_forward_rounded,
+                    color: AppColor.White,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
       backgroundColor: AppColor.Black,
       appBar: AppBar(
         titleSpacing: 0,
         elevation: 0,
         backgroundColor: AppColor.Black,
         centerTitle: false,
-
         title: Padding(
           padding: const EdgeInsets.only(left: 5),
           child: Text(
@@ -34,7 +74,8 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
           ),
         ),
         leading: IconButton(
-          icon: const Icon(CupertinoIcons.back, size: 30, color: AppColor.White),
+          icon:
+              const Icon(CupertinoIcons.back, size: 30, color: AppColor.White),
           onPressed: () => Navigator.pop(context),
         ),
       ),
@@ -49,21 +90,42 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
               const SizedBox(height: 20),
               _buildInputField(
                 label: AppLocalizations.of(context)?.nameTxt ?? "Ism",
-                hint: AppLocalizations.of(context)?.enterNameTxt ?? "Ismni kiriting",
+                hint: AppLocalizations.of(context)?.enterNameTxt ??
+                    "Ismni kiriting",
               ),
               const SizedBox(height: 20),
               _buildInputField(
                 label: AppLocalizations.of(context)?.surnameTxt ?? "Familiya",
-                hint: AppLocalizations.of(context)?.enterSurnameTxt ?? "Familiyani kiriting",
+                hint: AppLocalizations.of(context)?.enterSurnameTxt ??
+                    "Familiyani kiriting",
               ),
               const SizedBox(height: 20),
               _buildInputField(
                 label: AppLocalizations.of(context)?.ageTxt ?? "Yosh",
-                hint: AppLocalizations.of(context)?.enterAgeTxt ?? "Yoshingizni kiriting",
+                hint: AppLocalizations.of(context)?.enterAgeTxt ??
+                    "Yoshingizni kiriting",
                 keyboardType: TextInputType.number,
               ),
               const SizedBox(height: 20),
-
+              _buildInputField(
+                label: AppLocalizations.of(context)?.ageTxt ?? "Yosh",
+                hint: AppLocalizations.of(context)?.enterAgeTxt ??
+                    "Yoshingizni kiriting",
+                keyboardType: TextInputType.number,
+              ),
+              const SizedBox(height: 20),
+              _buildInputField(
+                label: "Viloyat",
+                hint: "Viloyatingizni kiriting",
+                keyboardType: TextInputType.number,
+              ),
+              const SizedBox(height: 20),
+              _buildInputField(
+                label: "Shahar",
+                hint: "Shaharni tanlang",
+                keyboardType: TextInputType.number,
+              ),
+              const SizedBox(height: 20),
             ],
           ),
         ),
@@ -122,6 +184,4 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
       ],
     );
   }
-
-
 }

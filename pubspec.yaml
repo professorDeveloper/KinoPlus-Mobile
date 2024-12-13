@@ -48,6 +48,7 @@ dependencies:
   flutter_device_type: ^0.4.0
   flutter_svg: ^2.0.16
   shimmer: ^2.0.0
+  custom_pop_up_menu_fork: ^2.0.0
   carousel_slider: ^5.0.0
   transformable_list_view: ^0.6.0
 

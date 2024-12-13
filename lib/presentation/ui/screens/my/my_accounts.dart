@@ -1,7 +1,15 @@
+import 'package:custom_pop_up_menu_fork/custom_pop_up_menu.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_device_type/flutter_device_type.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kinoplusmobile/core/constants/app_color.dart';
+import 'package:kinoplusmobile/core/constants/app_images.dart';
+import 'package:kinoplusmobile/navigator/navigator.dart';
+import 'package:kinoplusmobile/presentation/components/delete_dialog.dart';
+import 'package:kinoplusmobile/presentation/components/widgt.dart';
+import 'package:kinoplusmobile/presentation/ui/screens/profile/edit_profile_screen.dart';
 
 import '../../../../core/constants/app_style.dart';
 import '../../../helpers/custom_animation.dart';
@@ -62,6 +70,8 @@ class _MyAccountsScreenState extends State<MyAccountsScreen> {
                         'https://avatars.githubusercontent.com/u/108933534?v=4',
                         isSelected: selectedIndex == index, // Pass selected flag
                         onTap: () {
+                          deleteDialog(context);
+                          print("object");
                           setState(() {
                             // Update selected index
                             selectedIndex = index;
@@ -125,6 +135,8 @@ class _MyAccountsScreenState extends State<MyAccountsScreen> {
               ),
             ),
           ),
+          Spacer(),
+          SizedBox(height: Device.get().isAndroid?20:300,)
         ],
       ),
     );
@@ -137,13 +149,14 @@ class ProfileCard extends StatelessWidget {
   final bool isSelected; // Add isSelected to highlight the card
   final VoidCallback onTap;
 
-  const ProfileCard({
+   ProfileCard({
     Key? key,
     required this.name,
     required this.imagePath,
     required this.isSelected,
     required this.onTap,
   }) : super(key: key);
+  final CustomPopupMenuController menuController = CustomPopupMenuController();
 
   @override
   Widget build(BuildContext context) {
@@ -159,39 +172,44 @@ class ProfileCard extends StatelessWidget {
           Positioned(
             top: 2,
             right: 2,
-            child: IconButton(
-              padding: EdgeInsets.all(0),
-              onPressed: () {
-                PopupMenuButton(
-                  icon: Icon(
-                    size: 24,
-                    Icons.more_vert,
-                    color: AppColor.White,
+            child: CustomPopupMenu(
+              child: Icon(
+                Icons.more_vert,
+                color: Colors.white,
+                size: 30,
+              ),
+              menuBuilder: () {
+                return Container(
+                  width: 250,
+                  decoration: BoxDecoration(
+                    color: AppColor.Black,
+                    borderRadius: BorderRadius.circular(12),
                   ),
-                  elevation: 8.0,
-                  color: Colors.black,
-                  padding: EdgeInsets.symmetric(horizontal: 16.0),
-                  itemBuilder: (context) => [
-                    PopupMenuItem(
-                      value: 1,
-                      child: Text('Option 1'),
-                    ),
-                    PopupMenuItem(
-                      value: 2,
-                      child: Text('Option 2'),
-                    ),
-                  ],
-                  onSelected: (value) {
-                    // Handle the selected option
-                  },
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      SizedBox(height: 14,),
+                      _buildMenuItem(
+                        context: context,
+                        icon: AppImages.editIcon,
+                        text: "Tahrirlash",
+                      background: Color(0xAFFFFFF)),
+                      SizedBox(height: 12,),
+                      _buildMenuItem(
+                          context: context,
+                        icon: AppImages.deleteProfiIcon,
+                        text: "Akkauntni o'chirish",
+                      background: Color(0x1AD31A1F)),
+                      SizedBox(height: 14,),
+                    ],
+                  ),
                 );
               },
-              icon: Icon(
-                size: 24,
-                Icons.more_vert,
-                color: AppColor.White,
-              ),
-            ),
+              controller: menuController,
+              showArrow: false,
+              pressType: PressType.singleClick,
+              verticalMargin: 0,
+            )
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -213,4 +231,42 @@ class ProfileCard extends StatelessWidget {
       ),
     );
   }
+  Widget _buildMenuItem({
+    required BuildContext context,
+    required String icon,
+    required String text,
+    required Color background,
+  }) {
+    return InkWell(
+      onTap: (){
+        if(icon==AppImages.deleteProfiIcon){
+          menuController.hideMenu();
+          deleteDialog(context);
+        }
+        else{
+          menuController.hideMenu();
+          openScreen(context, EditProfileScreen());
+        }
+      },
+      borderRadius: BorderRadius.circular(22),
+
+      child: Container(
+        margin:EdgeInsets.symmetric(horizontal: 8),
+        decoration: BoxDecoration(
+          color: background,
+          borderRadius: BorderRadius.circular(22),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 4.0,vertical: 8),
+          child: Row(children: [
+            SizedBox(width: 14,),
+            SvgPicture.asset(icon,),
+            SizedBox(width: 12,),
+            Text(text,style: AppStyle.rubik14White,)
+          ],),
+        ),
+      ),
+    );
+  }
+
 }
