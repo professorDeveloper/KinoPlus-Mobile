@@ -6,9 +6,13 @@ import 'package:kinoplusmobile/core/constants/app_color.dart';
 import 'package:kinoplusmobile/core/constants/app_style.dart';
 import 'package:kinoplusmobile/navigator/navigator.dart';
 import 'package:kinoplusmobile/presentation/ui/screens/accounts/add_account.dart';
+import 'package:kinoplusmobile/presentation/ui/screens/my/history/watch_history_screen.dart';
 import 'package:kinoplusmobile/presentation/ui/screens/my/my_accounts.dart';
 import 'package:kinoplusmobile/presentation/ui/screens/my/myfilms_screen.dart';
+import 'package:kinoplusmobile/presentation/ui/screens/my/saved/saved_screen.dart';
 import 'package:kinoplusmobile/presentation/ui/screens/my/wallet/my_wallets_screen.dart';
+import 'package:kinoplusmobile/presentation/ui/screens/subscriptions/subscibtions_screen.dart';
+import 'package:kinoplusmobile/presentation/ui/screens/transactions/transactions_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -238,6 +242,18 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
                             }
                             else if (listName[index]=="Mening kartalarim"){
                               openScreen(context, MyWalletsScreen());
+                            }
+                            else if (listName[index]=="Obunalar"){
+                              openScreen(context, SubscriptionsScreen());
+                            }
+                            else if (listName[index]=="Tranzaksiyalar tarixi"){
+                              openScreen(context, TransactionsScreen());
+                            }
+                            else if (listName[index]=="Ko’rilganlar tarixi"){
+                              openScreen(context, WatchHistoryScreen());
+                            }
+                            else if (listName[index]=="Saqlanganlar"){
+                              openScreen(context, WishlistScreen());
                             }
                           },
                           borderRadius: BorderRadius.circular(12),

@@ -10,6 +10,10 @@ class AppImages {
   static const String searchIcon = 'assets/icons/searchicon.png';
   static const String iconPlus = 'assets/icons/18plus.png';
   static const String imagesItem1 = 'assets/images/item1.png';
+  static const String bottomsheetLine='assets/icons/bottomsheetline.svg';
+  static const String visaicon = 'assets/images/visa.png';
+  static const String devicesicon = 'assets/icons/devicesicon.svg';
+  static const String playicon = 'assets/icons/playicon.svg';
   static const String editIcon='assets/icons/editicon.svg';
   static const String walletIcon='assets/icons/walleticon.svg';
   static const String qrImage="assets/images/qrcode.png";
@@ -27,6 +31,13 @@ class AppImages {
   static const String shortsIcon = 'assets/icons/shortsicon.svg';
   static const String tvIcon = 'assets/icons/tvicon.svg';
   static const String profileIcon = 'assets/icons/profileicon.svg';
+  static const String paymeicon='assets/icons/paymeicon.svg';
+  static const String oktabricon='assets/icons/Oktobankicon.svg';
+  static const String payzeicon='assets/icons/payzeicon.svg';
+  static const String sberbankicon='assets/icons/sberbankicon.svg';
+  static const String uzumbankicon='assets/icons/uzumbank.png';
+  static const String linecharticon='assets/icons/linecharticon.svg';
+  static const String wishlisticon='assets/icons/wishlist.svg';
 
   static const String profileImg = 'assets/images/profile.png';
   static const String supermanIcon = 'assets/icons/superman.png';
@@ -35,6 +46,7 @@ class AppImages {
   static const String bookmark = 'assets/icons/bookmark.svg';
   static const String chartLine = 'assets/icons/chart-line-up.svg';
   static const String creditCard = 'assets/icons/credit-card.svg';
+  static const String cardPattern = 'assets/images/cardpattern.png';
   static const String film = 'assets/icons/film.svg';
   static const String time = 'assets/icons/time.svg';
   static const String users = 'assets/icons/users.svg';

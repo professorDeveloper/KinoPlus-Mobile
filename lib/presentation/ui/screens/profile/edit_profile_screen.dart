@@ -87,12 +87,12 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
             children: [
               const SizedBox(height: 20),
               _buildProfileImage(),
-              const SizedBox(height: 20),
-              _buildInputField(
-                label: AppLocalizations.of(context)?.nameTxt ?? "Ism",
-                hint: AppLocalizations.of(context)?.enterNameTxt ??
-                    "Ismni kiriting",
-              ),
+                const SizedBox(height: 20),
+                _buildInputField(
+                  label: AppLocalizations.of(context)?.nameTxt ?? "Ism",
+                  hint: AppLocalizations.of(context)?.enterNameTxt ??
+                      "Ismni kiriting",
+                ),
               const SizedBox(height: 20),
               _buildInputField(
                 label: AppLocalizations.of(context)?.surnameTxt ?? "Familiya",
@@ -177,7 +177,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(color: AppColor.Gray2),
+              borderSide:  BorderSide(color: AppColor.White2),
             ),
           ),
         ),

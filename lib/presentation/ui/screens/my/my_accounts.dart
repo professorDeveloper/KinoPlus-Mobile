@@ -7,7 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:kinoplusmobile/core/constants/app_color.dart';
 import 'package:kinoplusmobile/core/constants/app_images.dart';
 import 'package:kinoplusmobile/navigator/navigator.dart';
-import 'package:kinoplusmobile/presentation/components/delete_dialog.dart';
+import 'package:kinoplusmobile/presentation/ui/widgets/delete_dialog.dart';
 import 'package:kinoplusmobile/presentation/components/widgt.dart';
 import 'package:kinoplusmobile/presentation/ui/screens/profile/edit_profile_screen.dart';
 

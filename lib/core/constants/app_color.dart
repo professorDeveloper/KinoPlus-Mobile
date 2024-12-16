@@ -7,6 +7,8 @@ class AppColor {
 static const Color Red=Color(0xffD31A1F);
 static const Color Red2=Color(0xffFE4545);
 static const Color White=Color(0xffFFFFFF);
+static  Color White2=AppColor.White.withOpacity(0.7);
+static const Color Gray1=Color(0x99ffffff);
 static const Color Gray2=Color(0xff8C9598);
 static const Color Gray3=Color(0xff4C5558);
 static const Color Gray4=Color(0xff373D3F);

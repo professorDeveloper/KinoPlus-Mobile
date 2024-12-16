@@ -8,9 +8,10 @@ import 'package:kinoplusmobile/core/constants/app_images.dart';
 import '../../../../../core/constants/app_color.dart';
 import '../../../../../core/constants/app_style.dart';
 import '../../../../../navigator/navigator.dart';
-import '../../../../components/delete_dialog.dart';
+import '../../../widgets/delete_dialog.dart';
 import '../../../../helpers/custom_animation.dart';
 import '../../profile/edit_profile_screen.dart';
+import 'add_wallet_screen.dart';
 
 class MyHaveWalletsScreen extends StatefulWidget {
   const MyHaveWalletsScreen({super.key});
@@ -234,7 +235,7 @@ class _MyWalletsScreenState extends State<MyHaveWalletsScreen> {
     highlightElevation: 0,
     focusElevation: 0,
     onPressed: () {
-    // openScreen(context, RegisterScreen());
+    openScreen(context, AddWalletScreen());
     },
     textColor: Colors.white,
     shape: RoundedRectangleBorder(

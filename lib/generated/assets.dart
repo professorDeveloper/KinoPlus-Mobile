@@ -6,11 +6,13 @@ class Assets {
   static const String iconsAppleicon = 'assets/icons/appleicon.png';
   static const String iconsBolt = 'assets/icons/bolt.svg';
   static const String iconsBookmark = 'assets/icons/bookmark.svg';
+  static const String iconsBottomsheetline = 'assets/icons/bottomsheetline.svg';
   static const String iconsCategoryicon = 'assets/icons/categoryicon.svg';
   static const String iconsChartLineUp = 'assets/icons/chart-line-up.svg';
   static const String iconsChaticon = 'assets/icons/chaticon.svg';
   static const String iconsCreditCard = 'assets/icons/credit-card.svg';
   static const String iconsDeleteicon = 'assets/icons/deleteicon.svg';
+  static const String iconsDevicesicon = 'assets/icons/devicesicon.svg';
   static const String iconsDropdown = 'assets/icons/dropdown.svg';
   static const String iconsEditicon = 'assets/icons/editicon.svg';
   static const String iconsFacebookicon = 'assets/icons/facebookicon.png';
@@ -18,13 +20,23 @@ class Assets {
   static const String iconsGoogleicon = 'assets/icons/googleicon.png';
   static const String iconsHomeicon = 'assets/icons/homeicon.svg';
   static const String iconsImdbicon = 'assets/icons/imdbicon.png';
+  static const String iconsLinecharticon = 'assets/icons/linecharticon.svg';
+  static const String iconsOktobankicon = 'assets/icons/Oktobankicon.svg';
+  static const String iconsPaymeicon = 'assets/icons/paymeicon.svg';
+  static const String iconsPayzeicon = 'assets/icons/payzeicon.svg';
+  static const String iconsPlayicon = 'assets/icons/playicon.svg';
   static const String iconsProfileicon = 'assets/icons/profileicon.svg';
+  static const String iconsSberbankicon = 'assets/icons/sberbankicon.svg';
   static const String iconsSearchicon = 'assets/icons/searchicon.png';
   static const String iconsShortsicon = 'assets/icons/shortsicon.svg';
   static const String iconsSuperman = 'assets/icons/superman.png';
   static const String iconsTime = 'assets/icons/time.svg';
   static const String iconsTvicon = 'assets/icons/tvicon.svg';
   static const String iconsUsers = 'assets/icons/users.svg';
+  static const String iconsUzumbank = 'assets/icons/uzumbank.png';
+  static const String iconsWalleticon = 'assets/icons/walleticon.svg';
+  static const String iconsWishlist = 'assets/icons/wishlist.svg';
+  static const String imagesCardpattern = 'assets/images/cardpattern.png';
   static const String imagesHomebanner = 'assets/images/homebanner.png';
   static const String imagesItem1 = 'assets/images/item1.png';
   static const String imagesItem2 = 'assets/images/item2.png';
@@ -36,5 +48,6 @@ class Assets {
   static const String imagesPlaceholder = 'assets/images/placeholder.png';
   static const String imagesProfile = 'assets/images/profile.png';
   static const String imagesQrcode = 'assets/images/qrcode.png';
+  static const String imagesVisa = 'assets/images/visa.png';
 
 }
