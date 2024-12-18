@@ -134,8 +134,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       height: 372,
                       viewportFraction: 1.01,
                       initialPage: 0,
-                      autoPlay: false,
-                      autoPlayInterval: const Duration(seconds: 5),
+                      autoPlay: true,
+                      autoPlayInterval: const Duration(seconds: 1),
                       autoPlayAnimationDuration:
                           const Duration(milliseconds: 800),
                       autoPlayCurve: Curves.fastOutSlowIn,
