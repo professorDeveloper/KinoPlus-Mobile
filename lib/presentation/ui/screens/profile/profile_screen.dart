@@ -89,7 +89,7 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
             centerTitle: true,
 
             leading: const SizedBox(),
-            expandedHeight: Device.get().isAndroid?300:300,
+            expandedHeight: Device.get().isAndroid ? 300:300,
             floating: true, // This allows the app bar to float when scrolling up
             snap: true, // Makes it snap into place when scrolling
             pinned: true, // Keeps the app bar visible even when collapsed

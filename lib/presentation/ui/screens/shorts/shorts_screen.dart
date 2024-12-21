@@ -19,6 +19,8 @@ class _ShortsScreenState extends State<ShortsScreen> {
     'assets/videos/short2.mp4',
     'assets/videos/short3.mp4',
     'assets/videos/short4.mp4',
+    'assets/videos/short5.mp4',
+    'assets/videos/short6.mp4',
   ];
 
   late PageController _pageController;

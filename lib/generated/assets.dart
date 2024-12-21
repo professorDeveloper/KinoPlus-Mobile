@@ -57,5 +57,7 @@ class Assets {
   static const String videosShort2 = 'assets/videos/short2.mp4';
   static const String videosShort3 = 'assets/videos/short3.mp4';
   static const String videosShort4 = 'assets/videos/short4.mp4';
+  static const String videosShort5 = 'assets/videos/short5.mp4';
+  static const String videosShort6 = 'assets/videos/short6.mp4';
 
 }
