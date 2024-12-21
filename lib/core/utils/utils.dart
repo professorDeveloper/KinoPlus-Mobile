@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:kinoplusmobile/presentation/ui/screens/genre/categories_screen.dart';
+import 'package:kinoplusmobile/presentation/ui/screens/categories/categories_screen.dart';
 import 'package:kinoplusmobile/presentation/ui/screens/profile/edit_profile_screen.dart';
 import 'package:kinoplusmobile/presentation/ui/screens/profile/profile_screen.dart';
 import 'package:kinoplusmobile/presentation/ui/screens/shorts/shorts_screen.dart';

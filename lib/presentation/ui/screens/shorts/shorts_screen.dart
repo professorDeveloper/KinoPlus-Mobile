@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:video_player/video_player.dart';
 
 class ShortsScreen extends StatefulWidget {
   const ShortsScreen({super.key});
@@ -8,8 +9,63 @@ class ShortsScreen extends StatefulWidget {
 }
 
 class _ShortsScreenState extends State<ShortsScreen> {
+  late VideoPlayerController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = VideoPlayerController.networkUrl(
+      Uri.parse('https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'),
+    )
+      ..initialize().then((_) {
+        // Rebuild UI after the video initializes
+        setState(() {});
+      })
+      ..setLooping(true); // Video loops automatically
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose(); // Dispose of the controller when not in use
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return  Placeholder();
+    return Scaffold(
+      body: Center(
+        child: _controller.value.isInitialized
+            ? GestureDetector(
+          onTap: () {
+            setState(() {
+              _controller.value.isPlaying
+                  ? _controller.pause()
+                  : _controller.play();
+            });
+          },
+          child: Container(
+            height: double.infinity,
+              width: double.infinity,
+              child: VideoPlayer(_controller)),
+        )
+            : const Center(
+          child: CircularProgressIndicator(),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.red,
+        onPressed: () {
+          setState(() {
+            _controller.value.isPlaying
+                ? _controller.pause()
+                : _controller.play();
+          });
+        },
+        child: Icon(
+          _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
+          color: Colors.white,
+        ),
+      ),
+    );
   }
 }

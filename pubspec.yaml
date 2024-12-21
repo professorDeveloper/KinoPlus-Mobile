@@ -46,6 +46,7 @@ dependencies:
   pin_code_fields: ^8.0.1
   shared_preferences: ^2.0.13
   flutter_device_type: ^0.4.0
+  video_player: ^2.9.2
   flutter_svg: ^2.0.16
   shimmer: ^2.0.0
   custom_pop_up_menu_fork: ^2.0.0

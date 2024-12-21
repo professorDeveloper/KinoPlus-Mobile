@@ -35,15 +35,14 @@ class _HomeScreenState extends State<HomeScreen> {
             Stack(
               children: [
                 Container(
-                  height: Device.get().isAndroid?370:380,
+                  height: Device.get().isAndroid ? 370 : 380,
                   child: CarouselSlider.builder(
-
                     itemCount: bannerList.length,
                     itemBuilder: (context, index, realIndex) {
                       return Stack(
                         children: [
                           Container(
-                            decoration:  BoxDecoration(
+                            decoration: BoxDecoration(
                               image: DecorationImage(
                                 image: AssetImage(AppImages.homeBanner),
                                 fit: BoxFit.cover,
@@ -57,15 +56,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                 begin: Alignment.bottomCenter,
                                 end: Alignment.topCenter,
                               ),
-
                             ),
-                            height: Device.get().isAndroid?370:380,
+                            height: Device.get().isAndroid ? 370 : 380,
                           ),
                           Container(
                             width: double.infinity,
-                            height: Device.get().isAndroid?370:380,
-                            decoration:  BoxDecoration(
-
+                            height: Device.get().isAndroid ? 370 : 380,
+                            decoration: BoxDecoration(
                               gradient: LinearGradient(
                                 colors: [
                                   AppColor.Black.withOpacity(1),
@@ -75,14 +72,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                 begin: Alignment.bottomCenter,
                                 end: Alignment.topCenter,
                               ),
-
                             ),
-
                           ),
 
-                           Padding(
-                            padding:
-                                EdgeInsets.only(left: 18.0, top: Device.get().isAndroid?25:30, right: 12),
+                          Padding(
+                            padding: EdgeInsets.only(
+                                left: 18.0,
+                                top: Device.get().isAndroid ? 25 : 30,
+                                right: 12),
                             child: Row(
                               children: [
                                 Image(
@@ -101,12 +98,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                   bannerList[_current],
                                   style: AppStyle.daysOne25White,
                                 ),
-                                Text(
-                                  bannerDesc[_current],
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: AppStyle.rubik14Gray2
-                                ),
+                                Text(bannerDesc[_current],
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: AppStyle.rubik14Gray2),
                               ],
                             ),
                             right: 20,
@@ -150,7 +145,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 Positioned(
-                  top: Device.get().isAndroid?20:30,
+                  top: Device.get().isAndroid ? 20 : 30,
                   right: 12,
                   child: IconButton(
                     onPressed: () {},
@@ -177,7 +172,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           return Container(
                             width: 8.0,
                             height: 8.0,
-                            margin: const EdgeInsets.symmetric( horizontal: 5.0),
+                            margin: const EdgeInsets.symmetric(horizontal: 5.0),
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               color: _current == index
@@ -430,6 +425,14 @@ class _HomeScreenState extends State<HomeScreen> {
             height: 208,
             width: 140,
             decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.bottomLeft,
+                  end: Alignment.topRight,
+                  colors: [
+                Color(0x5F000000),
+                Color(0x5F000000),
+                Color(0x0),
+              ]),
               borderRadius: BorderRadius.circular(10),
               image: DecorationImage(
                 image: AssetImage(imagePath),
@@ -443,7 +446,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Text(
                     "Lorem Ipsum is simply dummy text...",
-                    style: AppStyle.rubik14White,
+                    style: AppStyle.rubik12White,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                   ),
