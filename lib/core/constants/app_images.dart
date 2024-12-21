@@ -38,6 +38,10 @@ class AppImages {
   static const String uzumbankicon='assets/icons/uzumbank.png';
   static const String linecharticon='assets/icons/linecharticon.svg';
   static const String wishlisticon='assets/icons/wishlist.svg';
+  static const String commenticon='assets/icons/commenticon.svg';
+  static const String likeicon='assets/icons/likeicon.svg';
+  static const String dislikeicon='assets/icons/dislikeicon.svg';
+  static const String shareicon='assets/icons/shareicon.svg';
 
   static const String profileImg = 'assets/images/profile.png';
   static const String supermanIcon = 'assets/icons/superman.png';

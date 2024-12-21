@@ -26,7 +26,7 @@ class _MainScreenState extends State<MainScreen> {
 
           data: BottomNavigationBarThemeData(
 
-            backgroundColor: AppColor.bottombg,
+            backgroundColor: _currentIndex == 2 ?Color(0xff16161a):AppColor.bottombg,
             selectedIconTheme: IconThemeData(
               color: AppColor.Red, // Selected icon color
             ),

@@ -10,9 +10,11 @@ class Assets {
   static const String iconsCategoryicon = 'assets/icons/categoryicon.svg';
   static const String iconsChartLineUp = 'assets/icons/chart-line-up.svg';
   static const String iconsChaticon = 'assets/icons/chaticon.svg';
+  static const String iconsCommenticon = 'assets/icons/commenticon.svg';
   static const String iconsCreditCard = 'assets/icons/credit-card.svg';
   static const String iconsDeleteicon = 'assets/icons/deleteicon.svg';
   static const String iconsDevicesicon = 'assets/icons/devicesicon.svg';
+  static const String iconsDislikeicon = 'assets/icons/dislikeicon.svg';
   static const String iconsDropdown = 'assets/icons/dropdown.svg';
   static const String iconsEditicon = 'assets/icons/editicon.svg';
   static const String iconsFacebookicon = 'assets/icons/facebookicon.png';
@@ -20,6 +22,7 @@ class Assets {
   static const String iconsGoogleicon = 'assets/icons/googleicon.png';
   static const String iconsHomeicon = 'assets/icons/homeicon.svg';
   static const String iconsImdbicon = 'assets/icons/imdbicon.png';
+  static const String iconsLikeicon = 'assets/icons/likeicon.svg';
   static const String iconsLinecharticon = 'assets/icons/linecharticon.svg';
   static const String iconsOktobankicon = 'assets/icons/Oktobankicon.svg';
   static const String iconsPaymeicon = 'assets/icons/paymeicon.svg';
@@ -28,6 +31,7 @@ class Assets {
   static const String iconsProfileicon = 'assets/icons/profileicon.svg';
   static const String iconsSberbankicon = 'assets/icons/sberbankicon.svg';
   static const String iconsSearchicon = 'assets/icons/searchicon.png';
+  static const String iconsShareicon = 'assets/icons/shareicon.svg';
   static const String iconsShortsicon = 'assets/icons/shortsicon.svg';
   static const String iconsSuperman = 'assets/icons/superman.png';
   static const String iconsTime = 'assets/icons/time.svg';
@@ -50,5 +54,8 @@ class Assets {
   static const String imagesQrcode = 'assets/images/qrcode.png';
   static const String imagesVisa = 'assets/images/visa.png';
   static const String videosShort = 'assets/videos/short.mp4';
+  static const String videosShort2 = 'assets/videos/short2.mp4';
+  static const String videosShort3 = 'assets/videos/short3.mp4';
+  static const String videosShort4 = 'assets/videos/short4.mp4';
 
 }
