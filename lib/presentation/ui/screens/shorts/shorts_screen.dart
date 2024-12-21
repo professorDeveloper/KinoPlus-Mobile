@@ -14,10 +14,7 @@ class _ShortsScreenState extends State<ShortsScreen> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.networkUrl(
-      Uri.parse('https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'),
-    )
-      ..initialize().then((_) {
+    _controller = VideoPlayerController.asset("assets/videos/shorts.mp4")..initialize().then((_) {
         // Rebuild UI after the video initializes
         setState(() {});
       })

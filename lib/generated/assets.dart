@@ -49,5 +49,6 @@ class Assets {
   static const String imagesProfile = 'assets/images/profile.png';
   static const String imagesQrcode = 'assets/images/qrcode.png';
   static const String imagesVisa = 'assets/images/visa.png';
+  static const String videosShort = 'assets/videos/short.mp4';
 
 }
