@@ -2,6 +2,9 @@ class AppImages {
   AppImages._();
 
   static const String appleIcon = 'assets/icons/appleicon.png';
+  static const String zortv = 'assets/images/zortv.png';
+  static const String ftv = 'assets/images/ftv.png';
+  static const String sporttv = 'assets/images/sporttv.png';
   static const String facebookicon = 'assets/icons/facebookicon.png';
   static const String googleicon = 'assets/icons/googleicon.png';
   static const String imdbicon = 'assets/icons/imdbicon.png';

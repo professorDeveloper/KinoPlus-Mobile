@@ -16,6 +16,7 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   int _currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,18 +24,19 @@ class _MainScreenState extends State<MainScreen> {
       body: screens[_currentIndex],
       bottomNavigationBar: Container(
         child: BottomNavigationBarTheme(
-
           data: BottomNavigationBarThemeData(
-
-            backgroundColor: _currentIndex == 2 ?Color(0xff16161a):AppColor.bottombg,
+            backgroundColor:
+                _currentIndex == 2 ? const Color(0xff151518) : AppColor.bottombg,
             selectedIconTheme: IconThemeData(
               color: AppColor.Red, // Selected icon color
             ),
             unselectedIconTheme: IconThemeData(
               color: AppColor.Gray2, // Unselected icon color
             ),
-            selectedItemColor: AppColor.Red, // Selected item color (for labels)
-            unselectedItemColor: AppColor.Gray2, // Unselected item color (for labels)
+            selectedItemColor: AppColor.Red,
+            // Selected item color (for labels)
+            unselectedItemColor: AppColor.Gray2,
+            // Unselected item color (for labels)
             selectedLabelStyle: AppStyle.rubik12White,
             unselectedLabelStyle: AppStyle.rubik12Gray2,
           ),
@@ -47,7 +49,6 @@ class _MainScreenState extends State<MainScreen> {
                 });
               },
               type: BottomNavigationBarType.fixed,
-
               items: [
                 BottomNavigationBarItem(
                   icon: SvgPicture.asset(
@@ -71,7 +72,6 @@ class _MainScreenState extends State<MainScreen> {
                   label: "Shorts",
                 ),
                 BottomNavigationBarItem(
-
                   icon: SvgPicture.asset(
                     AppImages.tvIcon,
                     color: _currentIndex == 3 ? AppColor.Red : AppColor.Gray2,
@@ -98,6 +98,5 @@ class _MainScreenState extends State<MainScreen> {
         ),
       ),
     );
-
   }
 }

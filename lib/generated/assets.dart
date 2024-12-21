@@ -41,6 +41,7 @@ class Assets {
   static const String iconsWalleticon = 'assets/icons/walleticon.svg';
   static const String iconsWishlist = 'assets/icons/wishlist.svg';
   static const String imagesCardpattern = 'assets/images/cardpattern.png';
+  static const String imagesFtv = 'assets/images/ftv.png';
   static const String imagesHomebanner = 'assets/images/homebanner.png';
   static const String imagesItem1 = 'assets/images/item1.png';
   static const String imagesItem2 = 'assets/images/item2.png';
@@ -52,7 +53,9 @@ class Assets {
   static const String imagesPlaceholder = 'assets/images/placeholder.png';
   static const String imagesProfile = 'assets/images/profile.png';
   static const String imagesQrcode = 'assets/images/qrcode.png';
+  static const String imagesSporttv = 'assets/images/sporttv.png';
   static const String imagesVisa = 'assets/images/visa.png';
+  static const String imagesZortv = 'assets/images/zortv.png';
   static const String videosShort = 'assets/videos/short.mp4';
   static const String videosShort2 = 'assets/videos/short2.mp4';
   static const String videosShort3 = 'assets/videos/short3.mp4';
